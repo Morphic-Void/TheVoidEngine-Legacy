@@ -1,0 +1,601 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Locality\\Projects\\Locality\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\quat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\aabb.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\allocators\\basic_index.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\allocators\\private\\block_allocator_header_inc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\allocators\\buddy_index.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\text\\utf.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\locality\\game_world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\Locality\\Engine\\Code\\Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Code\\Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Locality\\Projects\\Locality\\build_game.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:build_game.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Locality\\Projects\\Locality\\build_engine.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:build_engine.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Locality\\Projects\\Locality\\build_all.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:build_all.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Locality\\Projects\\Locality\\build.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:build.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Locality\\Projects\\Locality\\build_tool.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:build_tool.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\bitops.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\bitops.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\libs\\sorting\\avl_kv.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\libs\\system\\types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99D75917-D347-49B2-BC57-3E5CB84FD342}|Tool\\Tool.vcxproj|D:\\Locality\\Projects\\common\\platforms\\dx11\\pipeline\\library_parsing.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\memory\\array_sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\containers\\blob.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_source_inc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_header_inc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter16.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\crc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\joint.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0EC668-7BB6-4AD8-822A-3494DB6B8764}|Engine\\Engine.vcxproj|D:\\Locality\\Projects\\common\\libs\\maths\\vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "quat.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\quat.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\quat.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\quat.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\quat.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:36:54.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "build_game.bat",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\build_game.bat",
+              "RelativeDocumentMoniker": "build_game.bat",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\build_game.bat",
+              "RelativeToolTip": "build_game.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVDhPvZJNSwJRGIWfmcaQiH6DEdEHFBEFBe6KoKKoTf8iAlOmgdbipqBf0rKICAuDkj4WERgulL5o06gLx9S53lZJzrVQgh54uXDOuefdvPAXpJReqW00y4xkQAa8RmtoWb2dz4tLKw0vyACWGZaVSkWZ48SVPDpLKvr3scyw1BtWAPfpLIenl9i5PO92jv2DODd3KW\u002BsjlJg6DqOU2JidIjJsWGckoNhKLE6iuMKQbVaQdQENSFwq1VcV3hjdZSCcrmMBsTPk5wkLtA0SF7f4pQ\u002BvFFoVjA\u002BMsja8hw93V0IV/D69sLj8xOx3T1SD2lvXC34YnVhlvmZIIV8gei2Sd628fs7vbGfCwCKRQdDh/VQBJ\u002Bvo\u002Bnl/low0N/HVmiD4PQUO7EovQH15jTL3MyApjotIbNe5f/5BEiOoURWS5r0AAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-07-02T10:22:19.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "build_engine.bat",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\build_engine.bat",
+              "RelativeDocumentMoniker": "build_engine.bat",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\build_engine.bat",
+              "RelativeToolTip": "build_engine.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVDhPvZJNSwJRGIWfmcaQiH6DEdEHFBEFBe6KoKKoTf8iAlOmgdbipqBf0rKICAuDkj4WERgulL5o06gLx9S53lZJzrVQgh54uXDOuefdvPAXpJReqW00y4xkQAa8RmtoWb2dz4tLKw0vyACWGZaVSkWZ48SVPDpLKvr3scyw1BtWAPfpLIenl9i5PO92jv2DODd3KW\u002BsjlJg6DqOU2JidIjJsWGckoNhKLE6iuMKQbVaQdQENSFwq1VcV3hjdZSCcrmMBsTPk5wkLtA0SF7f4pQ\u002BvFFoVjA\u002BMsja8hw93V0IV/D69sLj8xOx3T1SD2lvXC34YnVhlvmZIIV8gei2Sd628fs7vbGfCwCKRQdDh/VQBJ\u002Bvo\u002Bnl/low0N/HVmiD4PQUO7EovQH15jTL3MyApjotIbNe5f/5BEiOoURWS5r0AAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-07-02T10:22:19.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "build_all.bat",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\build_all.bat",
+              "RelativeDocumentMoniker": "build_all.bat",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\build_all.bat",
+              "RelativeToolTip": "build_all.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVDhPvZJNSwJRGIWfmcaQiH6DEdEHFBEFBe6KoKKoTf8iAlOmgdbipqBf0rKICAuDkj4WERgulL5o06gLx9S53lZJzrVQgh54uXDOuefdvPAXpJReqW00y4xkQAa8RmtoWb2dz4tLKw0vyACWGZaVSkWZ48SVPDpLKvr3scyw1BtWAPfpLIenl9i5PO92jv2DODd3KW\u002BsjlJg6DqOU2JidIjJsWGckoNhKLE6iuMKQbVaQdQENSFwq1VcV3hjdZSCcrmMBsTPk5wkLtA0SF7f4pQ\u002BvFFoVjA\u002BMsja8hw93V0IV/D69sLj8xOx3T1SD2lvXC34YnVhlvmZIIV8gei2Sd628fs7vbGfCwCKRQdDh/VQBJ\u002Bvo\u002Bnl/low0N/HVmiD4PQUO7EovQH15jTL3MyApjotIbNe5f/5BEiOoURWS5r0AAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-07-02T10:22:18.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "build.bat",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\build.bat",
+              "RelativeDocumentMoniker": "build.bat",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\build.bat",
+              "RelativeToolTip": "build.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVDhPvZJNSwJRGIWfmcaQiH6DEdEHFBEFBe6KoKKoTf8iAlOmgdbipqBf0rKICAuDkj4WERgulL5o06gLx9S53lZJzrVQgh54uXDOuefdvPAXpJReqW00y4xkQAa8RmtoWb2dz4tLKw0vyACWGZaVSkWZ48SVPDpLKvr3scyw1BtWAPfpLIenl9i5PO92jv2DODd3KW\u002BsjlJg6DqOU2JidIjJsWGckoNhKLE6iuMKQbVaQdQENSFwq1VcV3hjdZSCcrmMBsTPk5wkLtA0SF7f4pQ\u002BvFFoVjA\u002BMsja8hw93V0IV/D69sLj8xOx3T1SD2lvXC34YnVhlvmZIIV8gei2Sd628fs7vbGfCwCKRQdDh/VQBJ\u002Bvo\u002Bnl/low0N/HVmiD4PQUO7EovQH15jTL3MyApjotIbNe5f/5BEiOoURWS5r0AAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-07-02T10:22:18.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "build_tool.bat",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\build_tool.bat",
+              "RelativeDocumentMoniker": "build_tool.bat",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\build_tool.bat",
+              "RelativeToolTip": "build_tool.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVDhPvZJNSwJRGIWfmcaQiH6DEdEHFBEFBe6KoKKoTf8iAlOmgdbipqBf0rKICAuDkj4WERgulL5o06gLx9S53lZJzrVQgh54uXDOuefdvPAXpJReqW00y4xkQAa8RmtoWb2dz4tLKw0vyACWGZaVSkWZ48SVPDpLKvr3scyw1BtWAPfpLIenl9i5PO92jv2DODd3KW\u002BsjlJg6DqOU2JidIjJsWGckoNhKLE6iuMKQbVaQdQENSFwq1VcV3hjdZSCcrmMBsTPk5wkLtA0SF7f4pQ\u002BvFFoVjA\u002BMsja8hw93V0IV/D69sLj8xOx3T1SD2lvXC34YnVhlvmZIIV8gei2Sd628fs7vbGfCwCKRQdDh/VQBJ\u002Bvo\u002Bnl/low0N/HVmiD4PQUO7EovQH15jTL3MyApjotIbNe5f/5BEiOoURWS5r0AAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-07-02T10:22:18.855Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "block_allocator_header_inc.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\allocators\\private\\block_allocator_header_inc.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\allocators\\private\\block_allocator_header_inc.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\allocators\\private\\block_allocator_header_inc.h",
+              "RelativeToolTip": "..\\common\\libs\\allocators\\private\\block_allocator_header_inc.h",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:30:45.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "basic_index.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\allocators\\basic_index.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\allocators\\basic_index.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\allocators\\basic_index.h",
+              "RelativeToolTip": "..\\common\\libs\\allocators\\basic_index.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:29:14.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "buddy_index.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\allocators\\buddy_index.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\allocators\\buddy_index.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\allocators\\buddy_index.h",
+              "RelativeToolTip": "..\\common\\libs\\allocators\\buddy_index.h",
+              "ViewState": "AgIAACwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:28:46.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "utf.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\text\\utf.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\text\\utf.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\text\\utf.h",
+              "RelativeToolTip": "..\\common\\libs\\text\\utf.h",
+              "ViewState": "AgIAANYAAAAAAAAAAAAAwOAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:26:25.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "utf_toolkit.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\unicode\\utf_toolkit.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.cpp",
+              "RelativeToolTip": "..\\common\\libs\\unicode\\utf_toolkit.cpp",
+              "ViewState": "AgIAABUDAAAAAAAAAAAAwCUDAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T11:24:44.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "utf_toolkit.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\unicode\\utf_toolkit.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\unicode\\utf_toolkit.h",
+              "RelativeToolTip": "..\\common\\libs\\unicode\\utf_toolkit.h",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAlwB8BAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T11:23:08.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "vector_console.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.cpp",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_console.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.cpp",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_console.cpp",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAwLQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T10:56:55.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "vector_console.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.h",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_console.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_console.h",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_console.h",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwE4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T10:56:43.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "vector_overlay.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.h",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.h",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAwEYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T10:56:23.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "vector_overlay.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.cpp",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.cpp",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\vector\\vector_overlay.cpp",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAwGEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T10:55:56.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "renderer.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.h",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\renderer\\renderer.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.h",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\renderer\\renderer.h",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAnwG8AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T10:54:04.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "renderer.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.cpp",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\rendering\\renderer\\renderer.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\rendering\\renderer\\renderer.cpp",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\rendering\\renderer\\renderer.cpp",
+              "ViewState": "AgIAACQCAAAAAAAAAAAAwDcCAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T10:35:34.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "game_world.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\locality\\game_world.cpp",
+              "RelativeDocumentMoniker": "..\\common\\locality\\game_world.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\locality\\game_world.cpp",
+              "RelativeToolTip": "..\\common\\locality\\game_world.cpp",
+              "ViewState": "AgIAABsEAAAAAAAAAAAnwPUDAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T10:31:34.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "bitops.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\bitops.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\bitops.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\bitops.cpp",
+              "RelativeToolTip": "..\\common\\libs\\maths\\bitops.cpp",
+              "ViewState": "AgIAABUCAAAAAAAAAAAnwBcCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T10:09:14.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\Locality\\Engine\\Code\\Application\\main.cpp",
+              "RelativeDocumentMoniker": "Engine\\Code\\Application\\main.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\Locality\\Engine\\Code\\Application\\main.cpp",
+              "RelativeToolTip": "Engine\\Code\\Application\\main.cpp",
+              "ViewState": "AgIAAEkCAAAAAAAAAAAkwFkCAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T09:59:10.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "bitops.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\bitops.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\bitops.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\bitops.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\bitops.h",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAnwMsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:39:35.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "avl_kv.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\sorting\\avl_kv.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\sorting\\avl_kv.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\sorting\\avl_kv.h",
+              "RelativeToolTip": "..\\common\\libs\\sorting\\avl_kv.h",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:32:14.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "types.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\system\\types.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\system\\types.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\system\\types.h",
+              "RelativeToolTip": "..\\common\\libs\\system\\types.h",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:27:39.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "library_parsing.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\platforms\\dx11\\pipeline\\library_parsing.h",
+              "RelativeDocumentMoniker": "..\\common\\platforms\\dx11\\pipeline\\library_parsing.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\platforms\\dx11\\pipeline\\library_parsing.h",
+              "RelativeToolTip": "..\\common\\platforms\\dx11\\pipeline\\library_parsing.h",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAIwGgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:25:29.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "array_sort.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\memory\\array_sort.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\memory\\array_sort.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\memory\\array_sort.h",
+              "RelativeToolTip": "..\\common\\libs\\memory\\array_sort.h",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:15:30.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "blob.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\containers\\blob.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\containers\\blob.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\containers\\blob.h",
+              "RelativeToolTip": "..\\common\\libs\\containers\\blob.h",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:14:43.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "array_sorter_source_inc.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_source_inc.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\containers\\private\\array_sorter_source_inc.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_source_inc.h",
+              "RelativeToolTip": "..\\common\\libs\\containers\\private\\array_sorter_source_inc.h",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:13:00.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "array_sorter32.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter32.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\containers\\array_sorter32.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter32.cpp",
+              "RelativeToolTip": "..\\common\\libs\\containers\\array_sorter32.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T09:12:18.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "array_sorter_header_inc.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_header_inc.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\containers\\private\\array_sorter_header_inc.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\containers\\private\\array_sorter_header_inc.h",
+              "RelativeToolTip": "..\\common\\libs\\containers\\private\\array_sorter_header_inc.h",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJ0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:07:31.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "array_sorter16.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter16.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\containers\\array_sorter16.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\containers\\array_sorter16.h",
+              "RelativeToolTip": "..\\common\\libs\\containers\\array_sorter16.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:06:55.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "aabb.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\aabb.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\aabb.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\aabb.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\aabb.h",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAlwFcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:06:21.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "crc.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\crc.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\crc.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\crc.cpp",
+              "RelativeToolTip": "..\\common\\libs\\maths\\crc.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T09:05:12.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "sphere.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\sphere.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\sphere.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\sphere.cpp",
+              "RelativeToolTip": "..\\common\\libs\\maths\\sphere.cpp",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T09:04:22.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "sphere.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\sphere.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\sphere.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\sphere.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\sphere.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:03:22.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "joint.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\joint.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\joint.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\joint.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\joint.h",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:02:05.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "vec3.h",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\vec3.h",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\vec3.h",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\vec3.h",
+              "RelativeToolTip": "..\\common\\libs\\maths\\vec3.h",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T09:00:16.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "vec3.cpp",
+              "DocumentMoniker": "D:\\Locality\\Projects\\common\\libs\\maths\\vec3.cpp",
+              "RelativeDocumentMoniker": "..\\common\\libs\\maths\\vec3.cpp",
+              "ToolTip": "D:\\Locality\\Projects\\common\\libs\\maths\\vec3.cpp",
+              "RelativeToolTip": "..\\common\\libs\\maths\\vec3.cpp",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAP4AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-02T08:59:17.546Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

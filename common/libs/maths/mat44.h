@@ -1,0 +1,229 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   mat44.h
+////    Author: Ritchie Brannan
+////    Date:   11 Nov 10
+////
+////    Description:
+////
+////    	4 by 4 element matrix container and functions.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard begin
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#ifndef	__MATHS_MAT44_INCLUDED__
+#define	__MATHS_MAT44_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "vec4.h"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin maths namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace maths
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    forward declarations
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+struct mat44;
+struct aabb;
+struct quat;
+struct plane;
+struct joint;
+struct mat33;
+struct mat43;
+struct box_verts;
+struct box_faces;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    consts
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace consts
+{
+	namespace MAT44
+	{
+		extern const mat44		IDENTITY;
+		extern const mat44		BEZIER;				//	A, B, C, D
+		extern const mat44		B_SPLINE;			//	A, B, C, D
+		extern const mat44		CATMULL_ROM;		//	A, B, C, D
+		extern const mat44		HERMITE;			//	U, A, B, V
+		extern const mat44		HBEZIER;			//	U, A, B, V
+	};
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    mat44
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+struct mat44
+{
+	vec4					x, y, z, w;
+	inline mat33&			t_mat33( void ) { return( *reinterpret_cast< mat33* >( this ) ); };
+	inline const mat33&		t_mat33( void ) const { return( *reinterpret_cast< const mat33* >( this ) ); };
+	inline mat43&			t_mat43( void ) { return( *reinterpret_cast< mat43* >( this ) ); };
+	inline const mat43&		t_mat43( void ) const { return( *reinterpret_cast< const mat43* >( this ) ); };
+	bool					IsNan( void ) const;
+	bool					IsReal( void ) const;
+	float					Det( void ) const;
+	void					Mul( const mat44& mul );
+	void					Mul( const mat43& mul );
+	void					Mul( const mat33& mul );
+	bool					Invert( void );
+	void					Transpose( void );
+	bool					InvertTranspose( void );
+	void					PartialInvert( void );
+	void					PartialInvertTranspose( void );
+	void					Reflect( const plane& about );
+	void					SetMul( const mat44& src, const mat44& mul );
+	void					SetMul( const mat44& src, const mat43& mul );
+	void					SetMul( const mat44& src, const mat33& mul );
+	void					SetMul( const mat43& src, const mat44& mul );
+	void					SetMul( const mat33& src, const mat44& mul );
+	void					SetRemap( const aabb& src, const aabb& trg );
+	void					SetDelta( const mat44& src, const mat44& trg );
+	bool					SetInverse( const mat44& src );
+	void					SetTranspose( const mat43& src );
+	void					SetTranspose( const mat44& src );
+	bool					SetInverseTranspose( const mat43& src );
+	bool					SetInverseTranspose( const mat44& src );
+	void					SetPartialInverse( const mat44& src );
+	void					SetPartialInverseTranspose( const mat44& src );
+	void					SetReflect( const plane& about );
+	void					SetReflected( const mat44& src, const plane& about );
+	void					SetTensor( const vec4& u, const vec4& v );
+	void					SetBarycentricTetrahedron( const vec3& v1, const vec3& v2, const vec3& v3, const vec3& v4 );
+	inline void				SetIdentity( void ) { Set( consts::MAT44::IDENTITY ); };
+	void					Set( const mat44& m );
+	void					Set( const mat43& m );
+	void					Set( const joint& j );
+	void					Set( const quat& q );
+	void					Get( mat44& m ) const;
+	bool					GetEye( vec3& eye ) const;
+	bool					GetInverseEye( vec3& eye ) const;
+	void					GetDescOBB( box_verts& verts, box_faces& faces, const bool dx = false ) const;
+	void					GetDescOBB( box_verts& verts, box_faces& faces, const aabb& bounds ) const;
+	void					GetDescOBB( box_verts& verts, const bool dx = false ) const;
+	void					GetDescOBB( box_verts& verts, const aabb& bounds ) const;
+	void					GetDescOBB( box_faces& faces, const bool dx = false ) const;
+	void					GetDescOBB( box_faces& faces, const aabb& bounds ) const;
+	void					GetDescFrustum( box_verts& verts, box_faces& faces, const bool dx = false ) const;
+	void					GetDescFrustum( box_verts& verts, box_faces& faces, const aabb& bounds ) const;
+	void					GetDescFrustum( box_verts& verts, const bool dx = false ) const;
+	void					GetDescFrustum( box_verts& verts, const aabb& bounds ) const;
+	void					GetDescFrustum( box_faces& faces, const bool dx = false ) const;
+	void					GetDescFrustum( box_faces& faces, const aabb& bounds ) const;
+	void					GetRawDescFrustum( box_faces& faces, const bool dx = false ) const;
+	void					GetRawDescFrustum( box_faces& faces, const aabb& bounds ) const;
+	void					GetPositiveFrustumPlaneX( const float c, plane& p ) const;
+	void					GetPositiveFrustumPlaneY( const float c, plane& p ) const;
+	void					GetPositiveFrustumPlaneZ( const float c, plane& p ) const;
+	void					GetNegativeFrustumPlaneX( const float c, plane& p ) const;
+	void					GetNegativeFrustumPlaneY( const float c, plane& p ) const;
+	void					GetNegativeFrustumPlaneZ( const float c, plane& p ) const;
+	void					GetFrustumPoint( const vec3& c, vec3& p ) const;
+	bool					SetBSpline( const float ( &knots )[ 6 ] );
+	bool					SetCatmull( const float d1, const float d2, const float d3 );
+	inline bool				SetCatmull( const float ( &knots )[ 4 ] ) { return( SetCatmull( ( knots[ 1 ] - knots[ 0 ] ), ( knots[ 2 ] - knots[ 1 ] ), ( knots[ 3 ] - knots[ 2 ] ) ) ); };
+    void					SetControl( const float a, const float b, const float c, const float d );
+    void					SetControl( const vec2& a, const vec2& b, const vec2& c, const vec2& d );
+    void					SetControl( const vec3& a, const vec3& b, const vec3& c, const vec3& d );
+    void					SetControl( const vec4& a, const vec4& b, const vec4& c, const vec4& d );
+	void					EvaluatePolynomial( const float t, vec4& value ) const;
+	void					EvaluatePolynomial( const float t, vec4& value, vec4& first ) const;
+	void					EvaluatePolynomial( const float t, vec4& value, vec4& first, vec4& second ) const;
+	void					EvaluateDerivative( const float t, vec4& first ) const;
+	void					EvaluateDerivatives( const float t, vec4& first, vec4& second ) const;
+	float					IntegratePolynomialLength( const float lower_t, const float upper_t ) const;
+	float					IntegratePolynomialLength( const unsigned int steps, const float lower_t, const float upper_t ) const;
+	void					EvaluateRationalPolynomial( const float t, vec4& value ) const;
+	void					EvaluateRationalPolynomial( const float t, vec4& value, vec4& first ) const;
+	void					EvaluateRationalPolynomial( const float t, vec4& value, vec4& first, vec4& second ) const;
+	void					EvaluateRationalDerivative( const float t, vec4& first ) const;
+	void					EvaluateRationalDerivatives( const float t, vec4& first, vec4& second ) const;
+	float					IntegrateRationalPolynomialLength( const float lower_t, const float upper_t ) const;
+	float					IntegrateRationalPolynomialLength( const unsigned int steps, const float lower_t, const float upper_t ) const;
+	inline mat44&			operator=( const mat44& m ) { Set( m ); return( *this ); };
+	inline mat44&			operator=( const mat43& m ) { Set( m ); return( *this ); };
+	inline mat44&			operator=( const joint& j ) { Set( j ); return( *this ); };
+	inline mat44&			operator=( const quat& q ) { Set( q ); return( *this ); };
+	inline mat44&			operator*=( const mat44& mul ) { Mul( mul ); return( *this ); };
+	inline mat44&			operator*=( const mat43& mul ) { Mul( mul ); return( *this ); };
+	inline mat44&			operator*=( const mat33& mul ) { Mul( mul ); return( *this ); };
+};
+
+inline mat44 operator*( const mat44& src, const mat44& mul ) { mat44 t; t.SetMul( src, mul ); return( t ); };
+inline mat44 operator*( const mat44& src, const mat43& mul ) { mat44 t; t.SetMul( src, mul ); return( t ); };
+inline mat44 operator*( const mat44& src, const mat33& mul ) { mat44 t; t.SetMul( src, mul ); return( t ); };
+inline mat44 operator*( const mat43& src, const mat44& mul ) { mat44 t; t.SetMul( src, mul ); return( t ); };
+inline mat44 operator*( const mat33& src, const mat44& mul ) { mat44 t; t.SetMul( src, mul ); return( t ); };
+
+inline mat44 invert( const mat44& src ) { mat44 t; t.SetInverse( src ); return( t ); };
+inline mat44 transpose( const mat44& src ) { mat44 t; t.SetTranspose( src ); return( t ); };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end maths namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace maths
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard end
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#endif	//	#ifndef	__MATHS_MAT44_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

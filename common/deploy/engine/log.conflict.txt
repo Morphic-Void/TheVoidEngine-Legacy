@@ -1,0 +1,26 @@
+Deploying Engine: 
+        1 file(s) copied.
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\debug_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\debug_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\draw_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\draw_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\fill_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\fill_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\mask_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\mask_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\simple_lit_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\simple_lit_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\simple_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\simple_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\sky_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\sky_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\standard_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\standard_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\trim_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\trim_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\vdisplay_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\vdisplay_vs.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\vdrawing_ps.cso
+C:\Users\Icabod\Documents\Visual Studio 2013\Projects\Locality\Engine\Debug\x64\vdrawing_vs.cso
+       22 file(s) copied.
+        1 file(s) copied.

@@ -1,0 +1,420 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   key_mouse.h
+////    Author: Ritchie Brannan
+////    Date:   16 Dec 14
+////
+////    Description:
+////
+////        Keyboard and mouse input class.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard begin
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#ifndef	__KEY_MOUSE_INCLUDED__
+#define	__KEY_MOUSE_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "libs/system/base/types.h"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin input namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace input
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    EVKey enumeration of virtual key indices
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum EVKey
+{
+    EVKeyMouseL     = 0x01,
+    EVKeyMouseR     = 0x02,
+    EVKeyCancel     = 0x03,
+    EVKeyMouseM     = 0x04,
+    EVKeyMouseA     = 0x05,
+    EVKeyMouseB     = 0x06,
+    EVKeyBack       = 0x08,
+    EVKeyBackSpace  = 0x08,
+    EVKeyTab        = 0x09,
+    EVKeyClear      = 0x0C,
+    EVKeyReturn     = 0x0D,
+    EVKeyShift      = 0x10,
+    EVKeyCtrl       = 0x11,
+    EVKeyAlt        = 0x12,
+    EVKeyPause      = 0x13,
+    EVKeyCapsLock   = 0x14,
+    EVKeyEscape     = 0x1B,
+    EVKeySpace      = 0x20,
+    EVKeyPgUp       = 0x21,
+    EVKeyPageUp     = 0x21,
+    EVKeyPgDn       = 0x22,
+    EVKeyPageDn     = 0x22,
+    EVKeyPgDown     = 0x22,
+    EVKeyPageDown   = 0x22,
+    EVKeyEnd        = 0x23,
+    EVKeyHome       = 0x24,
+    EVKeyLeft       = 0x25,
+    EVKeyUp         = 0x26,
+    EVKeyRight      = 0x27,
+    EVKeyDown       = 0x28,
+    EVKeyDn         = 0x28,
+    EVKeyIns        = 0x2D,
+    EVKeyInsert     = 0x2D,
+    EVKeyDel        = 0x2E,
+    EVKeyDelete     = 0x2E,
+    EVKey0          = 0x30,
+    EVKey1          = 0x31,
+    EVKey2          = 0x32,
+    EVKey3          = 0x33,
+    EVKey4          = 0x34,
+    EVKey5          = 0x35,
+    EVKey6          = 0x36,
+    EVKey7          = 0x37,
+    EVKey8          = 0x38,
+    EVKey9          = 0x39,
+    EVKeyA          = 0x41,
+    EVKeyB          = 0x42,
+    EVKeyC          = 0x43,
+    EVKeyD          = 0x44,
+    EVKeyE          = 0x45,
+    EVKeyF          = 0x46,
+    EVKeyG          = 0x47,
+    EVKeyH          = 0x48,
+    EVKeyI          = 0x49,
+    EVKeyJ          = 0x4A,
+    EVKeyK          = 0x4B,
+    EVKeyL          = 0x4C,
+    EVKeyM          = 0x4D,
+    EVKeyN          = 0x4E,
+    EVKeyO          = 0x4F,
+    EVKeyP          = 0x50,
+    EVKeyQ          = 0x51,
+    EVKeyR          = 0x52,
+    EVKeyS          = 0x53,
+    EVKeyT          = 0x54,
+    EVKeyU          = 0x55,
+    EVKeyV          = 0x56,
+    EVKeyW          = 0x57,
+    EVKeyX          = 0x58,
+    EVKeyY          = 0x59,
+    EVKeyZ          = 0x5A,
+    EVKeyNumpad0    = 0x60,
+    EVKeyNumpad1    = 0x61,
+    EVKeyNumpad2    = 0x62,
+    EVKeyNumpad3    = 0x63,
+    EVKeyNumpad4    = 0x64,
+    EVKeyNumpad5    = 0x65,
+    EVKeyNumpad6    = 0x66,
+    EVKeyNumpad7    = 0x67,
+    EVKeyNumpad8    = 0x68,
+    EVKeyNumpad9    = 0x69,
+    EVKeyMul        = 0x6A,
+    EVKeyAdd        = 0x6B,
+    EVKeySub        = 0x6D,
+    EVKeyPoint      = 0x6E,
+    EVKeyDecimal    = 0x6E,
+    EVKeyDiv        = 0x6F,
+    EVKeyF1         = 0x70,
+    EVKeyF2         = 0x71,
+    EVKeyF3         = 0x72,
+    EVKeyF4         = 0x73,
+    EVKeyF5         = 0x74,
+    EVKeyF6         = 0x75,
+    EVKeyF7         = 0x76,
+    EVKeyF8         = 0x77,
+    EVKeyF9         = 0x78,
+    EVKeyF10        = 0x79,
+    EVKeyF11        = 0x7A,
+    EVKeyF12        = 0x7B,
+    EVKeyF13        = 0x7C,
+    EVKeyF14        = 0x7D,
+    EVKeyF15        = 0x7E,
+    EVKeyF16        = 0x7F,
+    EVKeyF17        = 0x80,
+    EVKeyF18        = 0x81,
+    EVKeyF19        = 0x82,
+    EVKeyF20        = 0x83,
+    EVKeyF21        = 0x84,
+    EVKeyF22        = 0x85,
+    EVKeyF23        = 0x86,
+    EVKeyF24        = 0x87,
+    EVKeyNumLock    = 0x90,
+    EVKeyScroll     = 0x91,
+    EVKeyScrollLock = 0x91,
+    EVKeyShiftL     = 0xA0,
+    EVKeyShiftR     = 0xA1,
+    EVKeyCtrlL      = 0xA2,
+    EVKeyCtrlR      = 0xA3,
+    EVKeyAltL       = 0xA4,
+    EVKeyAltR       = 0xA5,
+    EVKeySemiColon  = 0xBA,
+    EVKeyPlus       = 0xBB,
+    EVKeyComma      = 0xBC,
+    EVKeyMinus      = 0xBD,
+    EVKeyStop       = 0xBE,
+    EVKeyFullStop   = 0xBE
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    EKeyStateBits enumeration of state bits for mouse and keyboard events
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum EKeyStateBits
+{
+    EKeyStateBitCapsLock    = ( 1 << 0 ),
+    EKeyStateBitNumLock     = ( 1 << 1 ),
+    EKeyStateBitShift       = ( 1 << 3 ),
+    EKeyStateBitCtrl        = ( 1 << 2 ),
+    EKeyStateBitAlt         = ( 1 << 4 ),
+    EKeyStateBitL           = ( 1 << 5 ),
+    EKeyStateBitM           = ( 1 << 6 ),
+    EKeyStateBitR           = ( 1 << 7 ),
+    EKeyStateBitA           = ( 1 << 8 ),
+    EKeyStateBitB           = ( 1 << 9 ),
+    EKeyStateMouseMask      = ( EKeyStateBitShift | EKeyStateBitCtrl | EKeyStateBitL | EKeyStateBitM | EKeyStateBitR | EKeyStateBitA | EKeyStateBitB ),
+    EKeyStateKeyboardMask   = ( EKeyStateBitCapsLock | EKeyStateBitNumLock | EKeyStateBitShift | EKeyStateBitCtrl | EKeyStateBitAlt ),
+    EKeyStateBitsForce32    = 0x7fffffff
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    EKeyAction enumeration of CKeyEvent actions
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum EKeyAction
+{
+    EKeyActionNull = 0,
+    EKeyActionPressed,
+    EKeyActionRepeated,
+    EKeyActionReleased,
+    EKeyActionCount,
+    EKeyActionForce32 = 0x7fffffff
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    EMouseAction enumeration of CMouseEvent actions
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum EMouseAction
+{
+    EMouseActionMove = 0,
+    EMouseActionClick,
+    EMouseActionDblClick,
+    EMouseActionRelease,
+    EMouseActionCount,
+    EMouseActionForce32 = 0x7fffffff
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    EMouseAction enumeration of CMouseEvent parts
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum EMousePart
+{
+    EMousePartNull = 0,
+    EMousePartKeyL,
+    EMousePartKeyM,
+    EMousePartKeyR,
+    EMousePartKeyA,
+    EMousePartKeyB,
+    EMousePartWheelV,
+    EMousePartWheelH,
+    EMousePartCount,
+    EMousePartForce32 = 0x7fffffff
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    CKeyEvent keyboard event type class
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CKeyEvent
+{
+public:
+    inline                  CKeyEvent() : m_event( 0 ) {};
+    inline                  CKeyEvent( const CKeyEvent& keyEvent ) : m_event( keyEvent.m_event ) {};
+    inline                  ~CKeyEvent() { clear(); };
+    inline void             clear() { m_event = 0; };
+    inline uint             getVKey() const { return( static_cast< uint >( ( m_event & 0xff000000 ) >> 24 ) ); };
+    inline char             getAscii() const { return( static_cast< char >( ( m_event & 0x00ff0000 )  >> 16 ) ); };
+    inline uint             getState() const { return( static_cast< uint >( m_event & 0x000003ff ) ); };
+    inline EKeyAction       getAction() const { return( static_cast< EKeyAction >( ( m_event & 0x00000c00 ) >> 10 ) ); };
+    inline void             setVKey( const uint vkey ) { m_event = ( ( m_event & 0x00ffffff ) | ( ( static_cast< uint32_t >( vkey ) << 24 ) & 0xff000000 ) ); };
+    inline void             setAscii( const char ascii ) { m_event = ( ( m_event & 0xff00ffff ) | ( ( static_cast< uint32_t >( ascii ) << 16 ) & 0x00ff0000 ) ); };
+    inline void             setState( const uint state ) { m_event = ( ( m_event & 0xfffffc00 ) | ( static_cast< uint32_t >( state ) & 0x000003ff ) ); };
+    inline void             setAction( const EKeyAction action ) { m_event = ( ( m_event & 0xfffff3ff ) | ( ( static_cast< uint32_t >( action ) << 10 ) & 0x00000c00 ) ); };
+protected:
+    uint32_t                m_event;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    CMouseEvent mouse event type class
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CMouseEvent
+{
+public:
+    inline                  CMouseEvent() : m_event( 0 ) {};
+    inline                  CMouseEvent( const CMouseEvent& mouseEvent ) : m_event( mouseEvent.m_event ) {};
+    inline                  ~CMouseEvent() { clear(); };
+    inline void             clear() { m_event = 0; };
+    inline EMousePart       getPart() const { return( static_cast< EMousePart >( ( m_event & 0x0000f000 ) >> 12 ) ); };
+    inline uint32_t         getState() const { return( m_event & 0x000003ff ); };
+    inline EMouseAction     getAction() const { return( static_cast< EMouseAction >( ( m_event & 0x00000c00 ) >> 10 ) ); };
+    inline int              getWheel() const { return( static_cast< int >( static_cast< int16_t >( ( m_event & 0xffff0000 ) >> 16 ) ) ); };
+    inline void             setPart( const EMousePart part ) { m_event = ( ( m_event & 0xffff0fff ) | ( ( static_cast< uint32_t >( part ) << 12 ) & 0x0000f000 ) ); };
+    inline void             setState( const uint32_t state ) { m_event = ( ( m_event & 0xfffffc00 ) | ( state & 0x000003ff ) ); };
+    inline void             setAction( const EMouseAction action ) { m_event = ( ( m_event & 0xfffff3ff ) | ( ( static_cast< uint32_t >( action ) << 10 ) & 0x00000c00 ) ); };
+    inline void             setWheel( const int wheel )  { m_event = ( ( m_event & 0x0000ffff ) | ( ( static_cast< uint32_t >( wheel ) << 16 ) & 0xffff0000 ) ); };
+    inline void             setWheelParam( const UINT param )  { m_event = ( ( m_event & 0x0000ffff ) | ( static_cast< uint32_t >( param ) & 0xffff0000 ) ); };
+protected:
+    uint32_t                m_event;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    CMouseParam mouse event parameter class
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CMouseParam
+{
+public:
+    inline                  CMouseParam() : m_param( 0 ) {};
+    inline                  CMouseParam( const CMouseParam& mouseParam ) : m_param( mouseParam.m_param ) {};
+    inline                  ~CMouseParam() { clear(); };
+    inline void             clear() { m_param = 0; };
+    inline int              getX() const { return( static_cast< int >( static_cast< int16_t >( m_param ) ) ); };
+    inline int              getY() const { return( static_cast< int >( static_cast< int16_t >( m_param >> 16 ) ) ); };
+    inline void             setX( const int x ) { m_param = ( ( m_param & 0xffff0000 ) | ( static_cast< uint32_t >( x ) & 0x0000ffff ) ); };
+    inline void             setY( const int y ) { m_param = ( ( m_param & 0x0000ffff ) | ( ( static_cast< uint32_t >( y ) & 0x0000ffff ) << 16 ) ); };
+    inline void             setPosParam( const UINT param ) { m_param = static_cast< uint32_t >( param ); };
+protected:
+    uint32_t                m_param;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    CKeyMouseState keyboard and mouse state class
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CKeyMouseState
+{
+public:
+    inline                      CKeyMouseState() : m_active( false ), m_locked( false ) { zero(); };
+    inline                      ~CKeyMouseState() { m_active = false; m_locked = false; zero(); };
+    inline bool                 isActive() const { return( m_active ); };
+    inline bool                 isLocked() const { return( m_locked ); };
+    inline int                  getMouseX() const { return( m_mouseX ); };
+    inline int                  getMouseY() const { return( m_mouseY ); };
+    inline int                  getDeltaX() const { return( m_deltaX ); };
+    inline int                  getDeltaY() const { return( m_deltaY ); };
+    inline int                  getWheelV() const { return( m_wheelV ); };
+    inline int                  getWheelH() const { return( m_wheelH ); };
+    inline bool                 isDown( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x80 ) ? true : false ); };
+    inline bool                 isUp( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x80 ) ? false : true ); };
+    inline bool                 keyPressed( const uint8_t vkey ) const {  return( ( ( m_keys[ vkey ] & 0xc0 ) == 0xc0 ) ? true : false ); };
+    inline bool                 keyReleased( const uint8_t vkey ) const { return( ( ( m_keys[ vkey ] & 0xc0 ) == 0x40 ) ? true : false ); };
+    inline bool                 keyChanged( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x40 ) ? true : false ); };
+    inline bool                 isToggled( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x01 ) ? true : false ); };
+    inline bool                 isUnToggled( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x01 ) ? false : true ); };
+    inline bool                 toggleEngaged( const uint8_t vkey ) const { return( ( ( m_keys[ vkey ] & 0x03 ) == 0x03 ) ? true : false ); };
+    inline bool                 toggleReleased( const uint8_t vkey ) const { return( ( ( m_keys[ vkey ] & 0x03 ) == 0x02 ) ? true : false ); };
+    inline bool                 toggleChanged( const uint8_t vkey ) const { return( ( m_keys[ vkey ] & 0x02 ) ? true : false ); };
+protected:
+    void                        zero();
+    bool                        m_active;
+    bool                        m_locked;
+    int                         m_mouseX;
+    int                         m_mouseY;
+    int                         m_deltaX;
+    int                         m_deltaY;
+    int                         m_wheelV;
+    int                         m_wheelH;
+    uint8_t                     m_keys[ 256 ];
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end input namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace input
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard end
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#endif  //  #ifndef __KEY_MOUSE_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

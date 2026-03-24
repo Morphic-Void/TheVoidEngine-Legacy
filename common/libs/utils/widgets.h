@@ -1,0 +1,323 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:    widgets.h
+////    Author:    Ritchie Brannan
+////    Date:    11 Nov 10
+////
+////    Description:
+////
+////        Widget geometry construction functions.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard begin
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#ifndef    __WIDGETS_INCLUDED__
+#define    __WIDGETS_INCLUDED__
+
+#pragma once
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "libs/system/base/types.h"
+#include "libs/utils/colours.h"
+#include "libs/maths/mat33.h"
+#include "libs/maths/mat44.h"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin widgets namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace widgets
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    widget type enumeration
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+enum WIDGET_TYPE
+{
+    WIDGET_VECTOR_GRID = 0,
+    WIDGET_VECTOR_STAR,
+    WIDGET_VECTOR_CUBE1,
+    WIDGET_VECTOR_CUBE2,
+    WIDGET_FILLED_CUBE1,
+    WIDGET_FILLED_CUBE2,
+    WIDGET_VECTOR_SPHERE1,
+    WIDGET_VECTOR_SPHERE2,
+    WIDGET_FILLED_SPHERE1,
+    WIDGET_FILLED_SPHERE2,
+    WIDGET_VECTOR_CAPSULE1,
+    WIDGET_VECTOR_CAPSULE2,
+    WIDGET_FILLED_CAPSULE1,
+    WIDGET_FILLED_CAPSULE2,
+    WIDGET_VECTOR_CYLINDER1,
+    WIDGET_VECTOR_CYLINDER2,
+    WIDGET_FILLED_CYLINDER1,
+    WIDGET_FILLED_CYLINDER2,
+    WIDGET_VECTOR_CONE1,
+    WIDGET_VECTOR_CONE2,
+    WIDGET_FILLED_CONE1,
+    WIDGET_FILLED_CONE2,
+    WIDGET_TYPE_FORCE32 = 0x7fffffff
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    widget index buffer interface
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( IIB )
+    virtual void        Set( const uint32_t index ) = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    widget vertex buffer interface
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( IVB )
+    virtual void        Set( const float px, const float py, const float pz, const float nx, const float ny, const float nz, const uint32_t colour ) = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    widget builder interface
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( IWidget )
+    virtual bool        IsFilled( void ) const = 0;
+    virtual WIDGET_TYPE GetType( void ) const = 0;
+    virtual uint32_t    GetPrims( void ) const = 0;
+    virtual uint32_t    GetIndices( void ) const = 0;
+    virtual uint32_t    GetIndices( IIB& buffer ) const = 0;
+    virtual uint32_t    GetVertices( void ) const = 0;
+    virtual uint32_t    GetVertices( IVB& buffer ) const = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    widget builder classes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Grid : public IWidget
+{
+public:
+    inline              Grid() { Clear(); };
+    inline              Grid( const uint32_t size, const bool border, const uint32_t grid_colour, const uint32_t axis_colour ) { Set( size, border, grid_colour, axis_colour ); };
+    inline              ~Grid() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( false ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                Set( const uint32_t size, const bool border, const uint32_t grid_colour, const uint32_t axis_colour );
+protected:
+    void                Clear( void );
+    uint32_t            m_size;
+    bool                m_border;
+    uint32_t            m_grid_colour;
+    uint32_t            m_axis_colour;
+};
+
+class Star : public IWidget
+{
+public:
+    inline              Star() { Clear(); };
+    inline              Star( const uint32_t colour ) { Set( colour ); };
+    inline              ~Star() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( false ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                Set( const uint32_t colour );
+protected:
+    void                Clear( void );
+    uint32_t            m_colour;
+};
+
+class Cube : public IWidget
+{
+public:
+    inline              Cube() { Clear(); };
+    inline              Cube( const uint32_t colour, const bool alt, const bool fill = true ) { Set( colour, alt, fill ); };
+    inline              ~Cube() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( m_fill ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                SetFill( const bool fill );
+    void                Set( const uint32_t colour, const bool alt, const bool fill = true );
+protected:
+    void                Clear( void );
+    bool                m_fill;
+    uint32_t            m_colour;
+    bool                m_alt;
+};
+
+class Sphere : public IWidget
+{
+public:
+    inline              Sphere() { Clear(); };
+    inline              Sphere( const uint32_t density, const uint32_t colour, const bool alt, const bool fill = true ) { Set( density, colour, alt, fill ); };
+    inline              ~Sphere() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( m_fill ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                SetFill( const bool fill );
+    void                Set( const uint32_t density, const uint32_t colour, const bool alt, const bool fill = true );
+protected:
+    void                Clear( void );
+    bool                m_fill;
+    uint32_t            m_density;
+    uint32_t            m_colour;
+    bool                m_alt;
+};
+
+class Capsule : public IWidget
+{
+public:
+    inline              Capsule() { Clear(); };
+    inline              Capsule( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true ) { Set( density, height, colour, alt, fill ); };
+    inline              ~Capsule() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( m_fill ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                SetFill( const bool fill );
+    void                Set( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true );
+protected:
+    void                Clear( void );
+    bool                m_fill;
+    uint32_t            m_density;
+    float               m_height;
+    uint32_t            m_colour;
+    bool                m_alt;
+};
+
+class Cylinder : public IWidget
+{
+public:
+    inline              Cylinder() { Clear(); };
+    inline              Cylinder( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true ) { Set( density, height, colour, alt, fill ); };
+    inline              ~Cylinder() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( m_fill ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                SetFill( const bool fill );
+    void                Set( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true );
+protected:
+    void                Clear( void );
+    bool                m_fill;
+    uint32_t            m_density;
+    float               m_height;
+    uint32_t            m_colour;
+    bool                m_alt;
+};
+
+class Cone : public IWidget
+{
+public:
+    inline              Cone() { Clear(); };
+    inline              Cone( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true ) { Set( density, height, colour, alt, fill ); };
+    inline              ~Cone() { Clear(); };
+    virtual bool        IsFilled( void ) const { return( m_fill ); };
+    virtual WIDGET_TYPE GetType( void ) const;
+    virtual uint32_t    GetPrims( void ) const;
+    virtual uint32_t    GetIndices( void ) const;
+    virtual uint32_t    GetIndices( IIB& buffer ) const;
+    virtual uint32_t    GetVertices( void ) const;
+    virtual uint32_t    GetVertices( IVB& buffer ) const;
+    void                SetFill( const bool fill );
+    void                Set( const uint32_t density, const float height, const uint32_t colour, const bool alt, const bool fill = true );
+protected:
+    void                Clear( void );
+    bool                m_fill;
+    uint32_t            m_density;
+    float               m_height;
+    uint32_t            m_colour;
+    bool                m_alt;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end widgets namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};    //    namespace widgets
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard end
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#endif    //    #ifndef    __WIDGETS_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

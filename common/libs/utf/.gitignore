@@ -1,0 +1,58 @@
+# ================================
+# Build artefacts
+# ================================
+/build/
+/out/
+/bin/
+/obj/
+/cmake-build-*/
+/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ================================
+# IDE / editor files
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.sln.docstates
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+
+# ================================
+# OS / filesystem noise
+# ================================
+.DS_Store
+Thumbs.db
+
+# ================================
+# Temporary / generated files
+# ================================
+*.log
+*.tmp
+
+# ================================
+# Perforce leftovers (defensive)
+# ================================
+.p4config
+.p4ignore
+
+# ================================
+# Unicode test data (not redistributed)
+# ================================
+UTF-8-test.txt
+
+# ================================
+# Internal documentation templates
+# ================================
+EncodingFamily_Template.md

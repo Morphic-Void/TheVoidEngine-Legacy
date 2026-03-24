@@ -1,0 +1,98 @@
+# ------------------------------------------------------------
+# Visual Studio / MSVC general ignores
+# ------------------------------------------------------------
+
+# Build results
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.idb
+*.ipdb
+*.iobj
+
+# Intermediate files
+*.ilk
+*.pch
+*.tmp
+*.log
+*.tlog
+*.lastcodeanalysissucceeded
+
+# VS database and user-specific files
+*.sdf
+*.suo
+*.opensdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+
+# Auto-generated project files
+*.user
+*.userosscache
+*.userprefs
+
+# Backup and crash files
+*.bak
+*.old
+
+# ------------------------------------------------------------
+# Build directories (common MSVC conventions)
+# ------------------------------------------------------------
+
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ipch/
+obj/
+
+# ------------------------------------------------------------
+# Legacy engine specific ignores
+# ------------------------------------------------------------
+
+# Ignore build artifacts inside Engine, Game, Tool
+Engine/bin/
+Engine/obj/
+Game/bin/
+Game/obj/
+Tool/bin/
+Tool/obj/
+
+# Ignore batch file outputs if they create temp folders
+temp/
+tmp/
+
+# ------------------------------------------------------------
+# Shader pipeline intermediates
+# ------------------------------------------------------------
+
+# Compiled shader objects (optional)
+# Uncomment if you want to exclude .cso files
+# *.cso
+
+# Metadata blobs (optional)
+# *.bin
+
+# ------------------------------------------------------------
+# Logs and generated content
+# ------------------------------------------------------------
+
+*.log
+*.out
+
+# ------------------------------------------------------------
+# Windows shortcuts
+# ------------------------------------------------------------
+
+*.lnk
+
+# ------------------------------------------------------------
+# Miscellaneous
+# ------------------------------------------------------------
+
+Thumbs.db
+Desktop.ini

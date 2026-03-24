@@ -1,0 +1,11 @@
+Deploying Tool: 
+bat\build_resources.bat
+bat\build_shaders.bat
+bat\update_json.bat
+        3 file(s) copied.
+dll\Win32\d3dcompiler_47.dll
+        1 file(s) copied.
+..\..\shaders\json\resources.json
+..\..\shaders\json\shaders.json
+        2 file(s) copied.
+        1 file(s) copied.

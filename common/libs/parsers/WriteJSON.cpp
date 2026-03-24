@@ -1,0 +1,248 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   WriteJSON.cpp
+////    Author: Ritchie Brannan
+////    Date:   11 Nov 10
+////
+////    Description:
+////
+////    	json writer class.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "WriteJSON.h"
+#include "QueryTree.h"
+#include "QueryMisc.h"
+#include "libs/system/debug/asserts.h"
+#include "libs/system/debug/xstdio.h"
+#include <string.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin parsers namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace parsers
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    WriteJSON class
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+WriteJSON::~WriteJSON()
+{
+}
+
+bool WriteJSON::Parse( void )
+{
+	if( Item( 0 ) )
+	{
+		return( Write( "\r\n" ) );
+	}
+	return( false );
+}
+
+//! decode and write an item
+bool WriteJSON::Item( const uint32_t item )
+{
+	const char* const key = m_tree->GetKey( item );
+	if( key ) if( !String( key ) || !Write( " : " ) ) return( false );
+	switch( m_tree->GetType( item ) )
+	{
+	case( QUERY_VALUE_LIST ):
+		{
+			++m_depth;
+			bool object = Object( item );
+			if( !Write( object ? ( key ? "{\r\n" : "{ " ) : ( key ? "[\r\n" : "[ " ) ) ) return( false );
+			uint32_t member = m_tree->GetMember( item );
+			if( !member ) return( false );
+			if( !Item( member ) ) return( false );
+			while( ( member = m_tree->GetNext( member ) ) != 0 )
+			{
+				if( !Write( ",\r\n" ) ) return( false );
+				if( !Item( member ) ) return( false );
+			}
+			--m_depth;
+			return( Write( object ? " }" : " ]" ) );
+		}
+	case( QUERY_VALUE_ITEM ):
+		{
+			return( Write( "null" ) );
+		}
+	case( QUERY_VALUE_TEXT ):
+	case( QUERY_VALUE_DATA ):
+		{
+			return( String( m_tree->GetText( item ) ) );
+		}
+	case( QUERY_VALUE_NULL ):
+		{
+			return( Write( "null" ) );
+		}
+	case( QUERY_VALUE_TRUE ):
+		{
+			return( Write( "true" ) );
+		}
+	case( QUERY_VALUE_FALSE ):
+		{
+			return( Write( "false" ) );
+		}
+	case( QUERY_VALUE_NUMBER ):
+		{
+			return( Number( item ) );
+		}
+	default:
+		{
+			break;
+		}
+	}
+	return( false );
+}
+
+//! determine if an item is an object
+bool WriteJSON::Object( const uint32_t item )
+{
+	for( uint32_t member = m_tree->GetMember( item ); member; member = m_tree->GetNext( member ) )
+	{
+		if( !m_tree->GetKey( member ) )
+		{	//	array
+			return( false );
+		}
+	}
+	return( true );
+}
+
+//! write a json number
+bool WriteJSON::Number( const uint32_t item )
+{
+	double number = 0;
+	if( m_tree->GetNumber( item, number ) )
+	{
+		char text[ 32 ];
+		sprintf_s( text, 32, "%g", number );
+		return( Write( text ) );
+	}
+	return( false );
+}
+
+//! translate and write a json string in quotes
+bool WriteJSON::String( const char* const string )
+{
+	ASSERT( string );
+	if( !string ) return( false );
+	unicode::utf_buffer parse;
+	parse.buffer = reinterpret_cast< uint8_t* >( const_cast< char* >( string ) );
+	parse.length = static_cast< unsigned int >( strlen( string ) + 1 );
+	parse.offset = 0;
+	int32_t unicode = 0;
+	if( !Write( "\"" ) ) return( false );
+	for( unicode::GetUTF8( parse, unicode ); unicode; unicode::GetUTF8( parse, unicode ) )
+	{
+		switch( unicode )
+		{	//	process escape codes
+		case( '"' ):
+			{	//	quotation mark
+				if( !Write( "\\\"" ) ) return( false );
+				break;
+			}
+		case( '\\' ):
+			{	//	reverse solidus
+				if( !Write( "\\\\" ) ) return( false );
+				break;
+			}
+		case( '\b' ):
+			{	//	backspace
+				if( !Write( "\\b" ) ) return( false );
+				break;
+			}
+		case( '\f' ):
+			{	//	form-feed
+				if( !Write( "\\f" ) ) return( false );
+				break;
+			}
+		case( '\n' ):
+			{	//	new line
+				if( !Write( "\\n" ) ) return( false );
+				break;
+			}
+		case( '\r' ):
+			{	//	carriage return
+				if( !Write( "\\r" ) ) return( false );
+				break;
+			}
+		case( '\t' ):
+			{	//	tab
+				if( !Write( "\\t" ) ) return( false );
+				break;
+			}
+		default:
+			{
+				if( unicode::IsCC( unicode ) || !unicode::IsCleanXML( unicode ) )
+				{
+					static const char hex[] = "0123456789abcdef";
+					char escape[ 13 ];
+					escape[  6 ] = escape[ 12 ] = 0;
+					if( unicode > 0x0000ffff )
+					{	//	write as surrogate pair hex escape
+						unicode = ( ( ( ( unicode << 16 ) | ( ( unicode - 0x00010000 ) >> 10 ) ) & 0x03ff03ff ) | 0xdc00d800 );
+						escape[  6 ] = '\\';
+						escape[  7 ] = 'u';
+						escape[  8 ] = hex[ ( unicode >> 28 ) & 15 ];
+						escape[  9 ] = hex[ ( unicode >> 24 ) & 15 ];
+						escape[ 10 ] = hex[ ( unicode >> 20 ) & 15 ];
+						escape[ 11 ] = hex[ ( unicode >> 16 ) & 15 ];
+					}
+					escape[  0 ] = '\\';
+					escape[  1 ] = 'u';
+					escape[  2 ] = hex[ ( unicode >> 12 ) & 15 ];
+					escape[  3 ] = hex[ ( unicode >> 8 ) & 15 ];
+					escape[  4 ] = hex[ ( unicode >> 4 ) & 15 ];
+					escape[  5 ] = hex[ unicode & 15 ];
+					if( !Write( escape ) ) return( false );
+				}
+				else
+				{
+					if( !Write( unicode ) ) return( false );
+				}
+				break;
+			}
+		}
+	}
+	if( !Write( "\"" ) ) return( false );
+	return( true );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end parsers namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace parsers
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

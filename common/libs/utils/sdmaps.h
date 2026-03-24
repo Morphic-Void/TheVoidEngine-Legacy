@@ -1,0 +1,494 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   sdmaps.h
+////    Author: Ritchie Brannan
+////    Date:   11 Nov 10
+////
+////    Description:
+////
+////    	Signed distance map and related calculations.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard begin
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#ifndef	__UTILS_SDMAPS_INCLUDED__
+#define	__UTILS_SDMAPS_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "libs/system/base/types.h"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin sdmaps namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace sdmaps
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Abstract bool array input interfaces.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( IGetBool1D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual bool			GetBool( const int x ) const = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( IGetBool2D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual bool			GetBool( const int x, const int y ) const = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( IGetBool3D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual int				GetDepth( void ) const = 0;
+	virtual bool			GetBool( const int x, const int y, const int z ) const = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Abstract int array input interfaces.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( IGetInt1D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetInt( const int x ) const = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( IGetInt2D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual int				GetInt( const int x, const int y ) const = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( IGetInt3D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual int				GetDepth( void ) const = 0;
+	virtual int				GetInt( const int x, const int y, const int z ) const = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Abstract float array output interfaces.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INTERFACE_BEGIN( ISetFloat1D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual void			SetFloat( const int x, const float f ) = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( ISetFloat2D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual void			SetFloat( const int x, const int y, const float f ) = 0;
+INTERFACE_END();
+
+INTERFACE_BEGIN( ISetFloat3D )
+	virtual int				GetWidth( void ) const = 0;
+	virtual int				GetHeight( void ) const = 0;
+	virtual int				GetDepth( void ) const = 0;
+	virtual void			SetFloat( const int x, const int y, const int z, const float f ) = 0;
+INTERFACE_END();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Base class for distance field generation from a boolean map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class SDMap
+{
+protected:
+	inline					SDMap() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Depth( 1 ) {};
+	inline					~SDMap() { Destroy(); };
+	bool					Prepare( const IGetBool1D& Map );
+	bool					Prepare( const IGetBool2D& Map );
+	bool					Prepare( const IGetBool3D& Map );
+	bool					FillMap( ISetFloat1D& Map ) const;
+	bool					FillMap( ISetFloat2D& Map ) const;
+	bool					FillMap( ISetFloat3D& Map ) const;
+	void					Destroy( void );
+	float					Fetch( const float u ) const;
+	float					Fetch( const float u, const float v ) const;
+	float					Fetch( const float u, const float v, const float w ) const;
+	float					Index( const float x, const int d, int& a, int& b ) const;
+	int						Setup( const int w, const int h, const int d );
+	void					Final( int n, int32_t* p );
+	void					Set1D( const int nu, const int nv, const int du, const int dv, int32_t* const p );
+	void					Set2D( const int nu, const int nv, const int du, const int dv, int32_t* const p );
+	void					Set3D( const int nu, const int nv, const int nw, const int du, const int dv, const int dw, int32_t* const p );
+	void*					m_pData;
+	int						m_Width;
+	int						m_Height;
+	int						m_Depth;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    1 dimensional signed distance field generation from a boolean map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class SDMap1D : protected SDMap
+{
+public:
+	inline					SDMap1D() : SDMap() {};
+	inline					~SDMap1D() { Destroy(); };
+	inline bool				Prepare( const IGetBool1D& Map ) { return( SDMap::Prepare( Map ) ); };
+	inline bool				FillMap( ISetFloat1D& Map ) const { return( SDMap::FillMap( Map ) ); };
+	inline void				Destroy( void ) { SDMap::Destroy(); };
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    2 dimensional signed distance field generation from a boolean map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class SDMap2D : protected SDMap
+{
+public:
+	inline					SDMap2D() : SDMap() {};
+	inline					~SDMap2D() { Destroy(); };
+	inline bool				Prepare( const IGetBool2D& Map ) { return( SDMap::Prepare( Map ) ); };
+	inline bool				FillMap( ISetFloat2D& Map ) const { return( SDMap::FillMap( Map ) ); };
+	inline void				Destroy( void ) { SDMap::Destroy(); };
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    3 dimensional signed distance field generation from a boolean map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class SDMap3D : protected SDMap
+{
+public:
+	inline					SDMap3D() : SDMap() {};
+	inline					~SDMap3D() { Destroy(); };
+	inline bool				Prepare( const IGetBool3D& Map ) { return( SDMap::Prepare( Map ) ); };
+	inline bool				FillMap( ISetFloat3D& Map ) const { return( SDMap::FillMap( Map ) ); };
+	inline void				Destroy( void ) { SDMap::Destroy(); };
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Conservative cone map generation from a 2D integer map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class ConeMap : protected SDMap, ISetFloat2D
+{
+public:
+	inline					ConeMap() : SDMap(), m_Map( NULL ), m_Min( 0 ), m_Max( 0 ) {};
+	inline					~ConeMap() { Destroy(); };
+	bool					Create( const IGetInt2D& Map, const int Min, const int Max );
+	inline bool				FillMap( ISetFloat2D& Map ) const { return( SDMap::FillMap( Map ) ); };
+	inline void				Destroy( void ) { SDMap::Destroy(); };
+protected:
+	virtual int				GetWidth( void ) const;
+	virtual int				GetHeight( void ) const;
+	virtual void			SetFloat( const int x, const int y, const float f );
+	const IGetInt2D*		m_Map;
+	int						m_Min;
+	int						m_Max;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Cylinder map generation from a 2D integer map.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CylinderMap : protected SDMap, ISetFloat2D
+{
+public:
+	inline					CylinderMap() : SDMap(), m_Map( NULL ), m_Min( 0 ), m_Max( 0 ) {};
+	inline					~CylinderMap() { Destroy(); };
+	bool					Create( const IGetInt2D& Map, const int Min, const int Max );
+	inline bool				FillMap( ISetFloat2D& Map ) const { return( SDMap::FillMap( Map ) ); };
+	inline void				Destroy( void ) { SDMap::Destroy(); };
+protected:
+	virtual int				GetWidth( void ) const;
+	virtual int				GetHeight( void ) const;
+	virtual void			SetFloat( const int x, const int y, const float f );
+	const IGetInt2D*		m_Map;
+	int						m_Min;
+	int						m_Max;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Standard bitmap bool input classes.
+////
+////    Input is from an 8-bit bitmap channel.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CBmpGetBool1D : public IGetBool1D
+{
+public:
+	inline				CBmpGetBool1D() : m_pData( NULL ), m_Width( 0 ), m_Stride( 1 ) {};
+	inline				CBmpGetBool1D( uint8_t* const pData, const int Width, const int Stride = 0 ) { SetMap( pData, Width, Stride ); };
+	inline				~CBmpGetBool1D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Stride = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual bool		GetBool( const int x ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Stride;	//	step between bitmap elements in bytes
+};
+
+class CBmpGetBool2D : public IGetBool2D
+{
+public:
+	inline				CBmpGetBool2D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Stride( 1 ), m_Pitch( 1 ) {};
+	inline				CBmpGetBool2D( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 ) { SetMap( pData, Width, Height, Stride, Pitch ); };
+	inline				~CBmpGetBool2D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual bool		GetBool( const int x, const int y ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+};
+
+class CBmpGetBool3D : public IGetBool3D
+{
+public:
+	inline				CBmpGetBool3D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Depth( 1 ), m_Stride( 1 ), m_Pitch( 1 ), m_Layer( 1 ) {};
+	inline				CBmpGetBool3D( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 ) { SetMap( pData, Width, Height, Depth, Stride, Pitch, Layer ); };
+	inline				~CBmpGetBool3D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual int			GetDepth( void ) const;
+	virtual bool		GetBool( const int x, const int y, const int z ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Depth;	//	image depth
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+	int					m_Layer;	//	step between bitmap layers in bytes
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Standard bitmap int input classes.
+////
+////    Input is from an 8-bit bitmap channel.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CBmpGetInt1D : public IGetInt1D
+{
+public:
+	inline				CBmpGetInt1D() : m_pData( NULL ), m_Width( 0 ), m_Stride( 1 ) {};
+	inline				CBmpGetInt1D( uint8_t* const pData, const int Width, const int Stride = 0 ) { SetMap( pData, Width, Stride ); };
+	inline				~CBmpGetInt1D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Stride = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetInt( const int x ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Stride;	//	step between bitmap elements in bytes
+};
+
+class CBmpGetInt2D : public IGetInt2D
+{
+public:
+	inline				CBmpGetInt2D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Stride( 1 ), m_Pitch( 1 ) {};
+	inline				CBmpGetInt2D( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 ) { SetMap( pData, Width, Height, Stride, Pitch ); };
+	inline				~CBmpGetInt2D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual int			GetInt( const int x, const int y ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+};
+
+class CBmpGetInt3D : public IGetInt3D
+{
+public:
+	inline				CBmpGetInt3D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Depth( 1 ), m_Stride( 1 ), m_Pitch( 1 ), m_Layer( 1 ) {};
+	inline				CBmpGetInt3D( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 ) { SetMap( pData, Width, Height, Depth, Stride, Pitch, Layer ); };
+	inline				~CBmpGetInt3D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual int			GetDepth( void ) const;
+	virtual int			GetInt( const int x, const int y, const int z ) const;
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Depth;	//	image depth
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+	int					m_Layer;	//	step between bitmap layers in bytes
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Standard bitmap output classes.
+////
+////    Output is to an 8-bit bitmap channel.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CBmpSetFloat1D : public ISetFloat1D
+{
+public:
+	inline				CBmpSetFloat1D() : m_pData( NULL ), m_Width( 0 ), m_Stride( 1 ), m_Scale( 1 ), m_Offset( 0 ) {};
+	inline				CBmpSetFloat1D( uint8_t* const pData, const int Width, const int Stride = 0 ) : m_Scale( 1 ), m_Offset( 0 ) { SetMap( pData, Width, Stride ); };
+	inline				~CBmpSetFloat1D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Stride = 0 );
+	void				SetRange( const float Map0x00, const float Map0xff );
+	virtual int			GetWidth( void ) const;
+	virtual void		SetFloat( const int x, const float f );
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Stride;	//	step between bitmap elements in bytes
+	float				m_Scale;	//	output scaling
+	float				m_Offset;	//	output offset
+};
+
+class CBmpSetFloat2D : public ISetFloat2D
+{
+public:
+	inline				CBmpSetFloat2D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Stride( 1 ), m_Pitch( 1 ), m_Scale( 1 ), m_Offset( 0 ) {};
+	inline				CBmpSetFloat2D( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 ) : m_Scale( 1 ), m_Offset( 0 ) { SetMap( pData, Width, Height, Stride, Pitch ); };
+	inline				~CBmpSetFloat2D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Stride = 0, const int Pitch = 0 );
+	void				SetRange( const float Map0x00, const float Map0xff );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual void		SetFloat( const int x, const int y, const float f );
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+	float				m_Scale;	//	output scaling
+	float				m_Offset;	//	output offset
+};
+
+class CBmpSetFloat3D : public ISetFloat3D
+{
+public:
+	inline				CBmpSetFloat3D() : m_pData( NULL ), m_Width( 0 ), m_Height( 1 ), m_Depth( 1 ), m_Stride( 1 ), m_Pitch( 1 ), m_Layer( 1 ), m_Scale( 1 ), m_Offset( 0 ) {};
+	inline				CBmpSetFloat3D( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 ) : m_Scale( 1 ), m_Offset( 0 ) { SetMap( pData, Width, Height, Depth, Stride, Pitch, Layer ); };
+	inline				~CBmpSetFloat3D() {};
+	void				SetMap( uint8_t* const pData, const int Width, const int Height, const int Depth, const int Stride = 0, const int Pitch = 0, const int Layer = 0 );
+	void				SetRange( const float Map0x00, const float Map0xff );
+	virtual int			GetWidth( void ) const;
+	virtual int			GetHeight( void ) const;
+	virtual int			GetDepth( void ) const;
+	virtual void		SetFloat( const int x, const int y, const int z, const float f );
+protected:
+	uint8_t*			m_pData;	//	bitmap base
+	int					m_Width;	//	image width
+	int					m_Height;	//	image height
+	int					m_Depth;	//	image depth
+	int					m_Stride;	//	step between bitmap elements in bytes
+	int					m_Pitch;	//	step between bitmap rows in bytes
+	int					m_Layer;	//	step between bitmap layers in bytes
+	float				m_Scale;	//	output scaling
+	float				m_Offset;	//	output offset
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end sdmaps namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace sdmaps
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    include guard end
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#endif	//	#ifndef	__UTILS_SDMAPS_INCLUDED__
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

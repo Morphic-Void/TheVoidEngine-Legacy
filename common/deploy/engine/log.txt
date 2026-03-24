@@ -1,0 +1,26 @@
+Deploying Engine: 
+        1 file(s) copied.
+D:\Locality\Projects\Locality\Engine\Debug\Win32\debug_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\debug_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\draw_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\draw_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\fill_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\fill_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\mask_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\mask_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\simple_lit_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\simple_lit_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\simple_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\simple_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\sky_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\sky_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\standard_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\standard_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\trim_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\trim_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\vdisplay_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\vdisplay_vs.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\vdrawing_ps.cso
+D:\Locality\Projects\Locality\Engine\Debug\Win32\vdrawing_vs.cso
+       22 file(s) copied.
+        1 file(s) copied.

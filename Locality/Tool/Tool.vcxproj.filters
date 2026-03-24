@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{098e3d04-d6d0-42e1-b80f-60f1ad275839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{2eefa951-a876-4e74-ac4f-8c79dc860755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs">
+      <UniqueIdentifier>{47c2d74a-e500-4a43-9c17-4c445d46b438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Architecture">
+      <UniqueIdentifier>{5f1b493b-da1b-4a06-9222-a156e1b8fa4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Cameras">
+      <UniqueIdentifier>{658a0cad-9b06-45de-bba5-58732a996e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Compression">
+      <UniqueIdentifier>{ca8c6727-8bf5-427d-858f-70ee00764612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Maths">
+      <UniqueIdentifier>{0a7fc77e-bcf8-4904-98fa-165e19fd1e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Memory">
+      <UniqueIdentifier>{3339f9e4-e71e-406f-a548-bc8810998494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Parsers">
+      <UniqueIdentifier>{ea80089e-98ab-43ee-8f86-63928cc097de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Sorting">
+      <UniqueIdentifier>{13161213-416a-432e-bb15-637d694723be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Splines">
+      <UniqueIdentifier>{f3d87ca8-8469-4364-a81a-1557396b65b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Strings">
+      <UniqueIdentifier>{10f20b54-ef2a-4e7a-be64-b03af46109f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\System">
+      <UniqueIdentifier>{02a77ee3-cf23-439e-ba71-2a971f877156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Text">
+      <UniqueIdentifier>{3bcb0cbc-e662-4ef0-8afc-e33bae7e3019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Utils">
+      <UniqueIdentifier>{1510092d-8a51-4af9-a47b-f82221524cd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms">
+      <UniqueIdentifier>{f297fde0-4822-4e1b-9fe6-87e1df454dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\Windows">
+      <UniqueIdentifier>{515bf34f-30f5-48e5-8af1-1873d9982dd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders">
+      <UniqueIdentifier>{6342f100-fa29-4aee-8f8f-1dac27cb12ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\HLSL">
+      <UniqueIdentifier>{6cf81264-590f-465c-96d5-b992eae392ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\HLSL\Build">
+      <UniqueIdentifier>{056ec6ee-4280-46de-9bfc-e25897362063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\HLSL\Libs">
+      <UniqueIdentifier>{3c6324a0-8846-4bcb-83a7-07e412ff080d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\HLSL\Reflect">
+      <UniqueIdentifier>{74cbf52f-e245-42be-ad83-84f8e2e8002f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\HLSL\Shaders">
+      <UniqueIdentifier>{5e81d2da-82a3-4e5e-b99f-1631ef14d9e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11">
+      <UniqueIdentifier>{83745acc-b326-4212-84fe-6faafbc0a30f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\System">
+      <UniqueIdentifier>{007b4714-3ae9-4408-b778-c3d0b4af1814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Pipeline">
+      <UniqueIdentifier>{537c1c97-3b31-4198-a7e5-ccb9b765db10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy">
+      <UniqueIdentifier>{b1ed4e84-2bbd-49d1-af5b-01eaf55644d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy\Engine">
+      <UniqueIdentifier>{361f76dc-d4fa-4eae-9686-be45da6815ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy\Engine\Text">
+      <UniqueIdentifier>{b84009bd-b809-4533-b9d8-86e6ce7d8af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy\Game">
+      <UniqueIdentifier>{d1cb84f1-35b2-44d1-a7bb-ebe3db7a8fae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy\Tool">
+      <UniqueIdentifier>{7b9d9aee-5219-4b40-8f9e-9c7eaa091a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Deploy\Tool\Bat">
+      <UniqueIdentifier>{b00f011b-4e99-4813-861e-51f69e2b1c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shaders\JSON">
+      <UniqueIdentifier>{ef88172d-0dab-4c6d-926c-2e82e0601d6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Engine">
+      <UniqueIdentifier>{8105e88d-4190-4ed2-acc9-efeffc668dd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Utils">
+      <UniqueIdentifier>{89d0204a-9ae0-47b4-ac54-c7c383a5e9e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Input">
+      <UniqueIdentifier>{edb763d9-d727-497d-b60c-dc5b2e356510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering">
+      <UniqueIdentifier>{95076ee2-45eb-4058-a640-0a244df03ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\System">
+      <UniqueIdentifier>{518d41cc-0e04-4310-8f46-aad4b50dc9a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\System\Binary">
+      <UniqueIdentifier>{1d9b59b1-79eb-480a-9c3c-4536e37f646c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\System\Private">
+      <UniqueIdentifier>{1e3e77c7-8eec-45f1-b2d9-b0ad52cb9405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\System\Public">
+      <UniqueIdentifier>{3ee22850-3103-43f0-b89c-a6688bc57f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\Utils">
+      <UniqueIdentifier>{dca9c58e-4d00-4f37-a5bd-67e3449e072a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\Renderer">
+      <UniqueIdentifier>{f357bb7c-550a-4a91-a236-9db3ae5b78f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Platforms\DX11\Rendering\Vector">
+      <UniqueIdentifier>{ae65c033-91ca-40dd-be91-f0b55a2d5b59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Unicode">
+      <UniqueIdentifier>{a2b5779a-d927-445b-a788-eea685be9292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Containers">
+      <UniqueIdentifier>{71352997-e0e9-4810-b89a-f21dd0184084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Containers\Private">
+      <UniqueIdentifier>{7bf537b2-ebc2-4a62-b4eb-0fd899fe1fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Allocators">
+      <UniqueIdentifier>{0c9b449c-a9ba-4603-aba8-6e339f16adc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libs\Allocators\private">
+      <UniqueIdentifier>{bc6828e2-e98f-435d-ae18-19806d2a1225}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Code\Application\main.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\architecture\leak_tracker.cpp">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\architecture\mediator.cpp">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\architecture\registry.cpp">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\cameras\clipper.cpp">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\cameras\viewer.cpp">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\cameras\viewport.cpp">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\compression\bwt.cpp">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\compression\delta.cpp">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\compression\m2f.cpp">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\compression\rle.cpp">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\compression\sparse.cpp">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\aabb.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\bitops.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\box_faces.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\box_verts.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\complex.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\consts.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\crc.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\dquat.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\dual.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\ellipsoid.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\frect.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\irect.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\joint.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\mat22.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\mat33.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\mat43.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\mat44.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\noise.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\plane.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\prand.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\qtangent.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\quat.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\ray.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\rnm.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\scalar.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\sh.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\sphere.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\vec2.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\vec3.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\maths\vec4.cpp">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\memory\nbuffer.cpp">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\ParseBase.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\ParseBVH.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\ParseJSON.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\ParseXML.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\QueryTree.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\WriteBase.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\WriteJSON.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\parsers\WriteXML.cpp">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\avl_blob.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\avl_id.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\avl_kv.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\avl_name.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\kv_map.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\sorting\list_sort.cpp">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\splines\cubic.cpp">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\splines\easings.cpp">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\splines\quadratic.cpp">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\splines\roots.cpp">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\splines\utils.cpp">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\fast_string_table.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\frozen_string_table.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\string_table_blob.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\string_table_buffer.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\asserts.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\endian.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\file.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\log.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\type_info.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\xstdio.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\text\ascii.cpp">
+      <Filter>Common\Libs\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\text\hash.cpp">
+      <Filter>Common\Libs\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\colour_tools.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\colours.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\draw.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\sdmaps.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\tga.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\vfont.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\vtext.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\utils\widgets.cpp">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\cwnd.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\stdafx.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\plugin.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\cappx.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\cwndx.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\timing.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\windows\cenginex.cpp">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\strings_blob.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\strings\strings_buffer.cpp">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\memory\shared_ptr.cpp">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\system\buffersx.cpp">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\system\corex.cpp">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\system\statesx.cpp">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\system\targetsx.cpp">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\layout_parsing.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\library_parsing.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\parsing_tokens.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\resource_mapping.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\state_parsing.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\engine\engine.cpp">
+      <Filter>Common\Platforms\DX11\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\utils\named_shares.cpp">
+      <Filter>Common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\system\float16_t.cpp">
+      <Filter>Common\Libs\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\input\game_pad.cpp">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\factory.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\resources.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\shaders.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\stage_bindings.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\stage_params.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\stage_parsing.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\shader_builder.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\pipeline\shader_parsing.cpp">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\functions.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\utils\widget.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\renderer\renderer.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\vector\vector_console.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\vector\vector_display.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\vector\vector_drawing.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\vector\vector_overlay.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\utils\standard_palette.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\public\reflected.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\cameras\projector.cpp">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\cameras\camera.cpp">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\input\key_mouse.cpp">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\input\key_mouse_win32.cpp">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\input\game_pad_x360.cpp">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\texture_gen.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\physicals.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\formats.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\helpers.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\physical_types.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\resource_types.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\state_descs.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platforms\dx11\rendering\system\private\buffer_descs.cpp">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\text\utf.cpp">
+      <Filter>Common\Libs\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\unicode\unicode.cpp">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\unicode\utf_simple.cpp">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\unicode\utf_toolkit.cpp">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\memory\array_sort.cpp">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\containers\blob.cpp">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\containers\buffer.cpp">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\containers\memory.cpp">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\containers\array_sorter16.cpp">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\containers\array_sorter32.cpp">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\allocators\basic_index.cpp">
+      <Filter>Common\Libs\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\libs\allocators\buddy_index.cpp">
+      <Filter>Common\Libs\Allocators</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\Application\main.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\architecture\architecture.h">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\architecture\auto_id.h">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\architecture\leak_tracker.h">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\architecture\mediator.h">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\architecture\registry.h">
+      <Filter>Common\Libs\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\cameras.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\clipper.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\viewer.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\viewport.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\bwt.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\compression.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\delta.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\m2f.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\rle.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\compression\sparse.h">
+      <Filter>Common\Libs\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\aabb.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\bitops.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\box_faces.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\box_verts.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\complex.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\consts.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\crc.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\dquat.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\dual.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\ellipsoid.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\frect.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\irect.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\joint.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\mat22.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\mat33.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\mat43.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\mat44.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\maths.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\noise.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\plane.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\prand.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\qtangent.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\quat.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\ray.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\rnm.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\scalar.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\sh.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\sphere.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\vec2.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\vec3.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\maths\vec4.h">
+      <Filter>Common\Libs\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\memory.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\nbuffer.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\ref_blob.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tblob.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tbuffer.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tpool.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tslot.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\ParseBase.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\ParseBVH.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\ParseJSON.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\parsers.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\ParseXML.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\QueryMisc.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\QueryTree.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\WriteBase.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\WriteJSON.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\parsers\WriteXML.h">
+      <Filter>Common\Libs\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\avl_blob.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\avl_id.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\avl_kv.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\avl_name.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\kv_map.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\list_sort.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\sorting.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\sorting\tlist_sort.h">
+      <Filter>Common\Libs\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\cubic.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\draw.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\easings.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\quadratic.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\roots.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\splines.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\splines\utils.h">
+      <Filter>Common\Libs\Splines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\fast_string_table.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\frozen_string_table.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\string_table_blob.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\string_table_buffer.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\strings.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\asserts.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\endian.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\file.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\log.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\system.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\type_info.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\types.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\xstdio.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\text\ascii.h">
+      <Filter>Common\Libs\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\text\hash.h">
+      <Filter>Common\Libs\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\text\text.h">
+      <Filter>Common\Libs\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\colour_tools.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\colours.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\draw.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\sdmaps.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\tga.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\utils.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\vchar.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\vfont.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\vtext.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\utils\widgets.h">
+      <Filter>Common\Libs\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\cwnd.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\stdafx.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\targetver.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\shaders\hlsl\reflect\types.h">
+      <Filter>Common\Shaders\HLSL\Reflect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\plugin.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tarray_sort.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\cappx.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\cwndx.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\timing.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\windows\cenginex.h">
+      <Filter>Common\Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\strings_blob.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\strings_buffer.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\strings\string_item.h">
+      <Filter>Common\Libs\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\shared_ptr.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\system\buffersx.h">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\system\corex.h">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\system\statesx.h">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\system\systemx.h">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\system\targetsx.h">
+      <Filter>Common\Platforms\DX11\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\layout_parsing.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\library_parsing.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\parsing_tokens.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\resource_mapping.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\state_parsing.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\engine\engine.h">
+      <Filter>Common\Platforms\DX11\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\utils\named_shares.h">
+      <Filter>Common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\utils\tarray_named.h">
+      <Filter>Common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\utils\tarray_resource.h">
+      <Filter>Common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\system\float16_t.h">
+      <Filter>Common\Libs\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\input\game_pad.h">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\binary\common.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\binary\resources.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\binary\shaders.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\factory.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\resources.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\resource_binary.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\resource_structs.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\shaders.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\shader_binary.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\shader_structs.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\commands.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\complete.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\formats.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\functions.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\helpers.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\reflected.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\state_descs.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\standard_semantics.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\tstream.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\vertices.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\stage_bindings.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\stage_params.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\stage_parsing.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\shader_builder.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\shader_containers.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\pipeline\shader_parsing.h">
+      <Filter>Common\Platforms\DX11\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\widget.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\renderer\renderer.h">
+      <Filter>Common\Platforms\DX11\Rendering\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\vector\vector_console.h">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\vector\vector_display.h">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\vector\vector_drawing.h">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\vector\vector_overlay.h">
+      <Filter>Common\Platforms\DX11\Rendering\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\standard_palette.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\utils\tindexed.h">
+      <Filter>Common\Platforms\DX11\Rendering\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\projector.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\cameras\camera.h">
+      <Filter>Common\Libs\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\tmanaged.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\input\key_mouse.h">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\input\key_mouse_win32.h">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\input\game_pad_x360.h">
+      <Filter>Common\Platforms\DX11\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\texture_gen.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\factory_interface.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\resource_interfaces.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\shader_interfaces.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\physical_interfaces.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\physicals.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\physical_structs.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\factory_api.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\resources_api.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\shaders_api.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\physical_types.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\physicals_api.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\private\resource_types.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platforms\dx11\rendering\system\public\buffer_descs.h">
+      <Filter>Common\Platforms\DX11\Rendering\System\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\text\utf.h">
+      <Filter>Common\Libs\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\unicode\unicode.h">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\unicode\utf_helpers.h">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\unicode\utf_simple.h">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\unicode\utf_toolkit.h">
+      <Filter>Common\Libs\Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\tsmart.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\memory\array_sort.h">
+      <Filter>Common\Libs\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\tarray.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\blob.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\buffer.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\memory.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\private\array_sorter_header_inc.h">
+      <Filter>Common\Libs\Containers\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\private\array_sorter_source_inc.h">
+      <Filter>Common\Libs\Containers\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\array_sorter16.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\containers\array_sorter32.h">
+      <Filter>Common\Libs\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\allocators\basic_index.h">
+      <Filter>Common\Libs\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\allocators\buddy_index.h">
+      <Filter>Common\Libs\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\allocators\private\block_allocator_header_inc.h">
+      <Filter>Common\Libs\Allocators\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\libs\allocators\private\block_allocator_source_inc.h">
+      <Filter>Common\Libs\Allocators\private</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\config.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\quaternions.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\scene.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\reflect\structs.hlsl">
+      <Filter>Common\Shaders\HLSL\Reflect</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\reflect\types.hlsl">
+      <Filter>Common\Shaders\HLSL\Reflect</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\std_vertex.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\vertex_utils.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\std_entity.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\common\shaders\hlsl\libs\utils.hlsl">
+      <Filter>Common\Shaders\HLSL\Libs</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\common\deploy\engine\postbuild.bat">
+      <Filter>Common\Deploy\Engine</Filter>
+    </None>
+    <None Include="..\..\common\deploy\game\postbuild.bat">
+      <Filter>Common\Deploy\Game</Filter>
+    </None>
+    <None Include="..\..\common\deploy\tool\postbuild.bat">
+      <Filter>Common\Deploy\Tool</Filter>
+    </None>
+    <None Include="..\..\common\deploy\tool\bat\update_json.bat">
+      <Filter>Common\Deploy\Tool\Bat</Filter>
+    </None>
+    <None Include="..\..\common\deploy\tool\bat\build_resources.bat">
+      <Filter>Common\Deploy\Tool\Bat</Filter>
+    </None>
+    <None Include="..\..\common\shaders\json\resources.json">
+      <Filter>Common\Shaders\JSON</Filter>
+    </None>
+    <None Include="..\..\common\shaders\json\shaders.json">
+      <Filter>Common\Shaders\JSON</Filter>
+    </None>
+    <None Include="..\..\common\deploy\tool\bat\build_shaders.bat">
+      <Filter>Common\Deploy\Tool\Bat</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\common\deploy\engine\text\lorem_ipsum.txt">
+      <Filter>Common\Deploy\Engine\Text</Filter>
+    </Text>
+    <Text Include="..\..\common\libs\unicode\utf_readme.txt">
+      <Filter>Common\Libs\Unicode</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

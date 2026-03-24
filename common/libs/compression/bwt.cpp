@@ -1,0 +1,337 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   bwt.cpp
+////    Author: Ritchie Brannan
+////    Date:   11 Nov 10
+////
+////    Description:
+////
+////    	Burrows-Wheeler transform to improve compression ratios.
+////
+////    Notes:
+////
+////    	The various transform functions only differ by the size of the encodable transform
+////    	which determines the element size of the temporary processing buffers. 
+////
+////    	The length parameter of the functions refers to the element count of the input,
+////    	output and encode/decode buffers.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "bwt.h"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin compression namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace compression
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin bwt namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace bwt
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    Burrows-Wheeler transform encoding and decoding functions
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int32_t Compare( const uint8_t* const buffer, const uint32_t length, const uint32_t start1, const uint32_t start2 )
+{
+	if( length )
+	{
+		uint32_t index1 = start1;
+		uint32_t index2 = start2;
+		if( length & ( length - 1 ) )
+		{	//	length is not a power of 2 so the wrapping operation must be a remainder function or a conditional
+			for( uint32_t loop = length; loop; --loop )
+			{
+				int32_t delta = ( static_cast< int32_t >( buffer[ index1 % length ] ) - static_cast< int32_t >( buffer[ index2 % length ] ) );
+				if( delta ) return( delta );
+				++index1;
+				++index2;
+			}
+		}
+		else
+		{	//	length is a power of 2, so the wrapping operation can be a mask
+			uint32_t wrap = ( length - 1 );
+			for( uint32_t loop = length; loop; --loop )
+			{
+				int32_t delta = ( static_cast< int32_t >( buffer[ index1 & wrap ] ) - static_cast< int32_t >( buffer[ index2 & wrap ] ) );
+				if( delta ) return( delta );
+				++index1;
+				++index2;
+			}
+		}
+	}
+	return( 0 );
+}
+
+//! encode buffers up to 256 bytes long (return false if length > 256)
+bool Encode( const uint8_t* const input, uint8_t* const output, uint8_t* const encode, const uint32_t length, uint8_t& key )
+{
+	if( length > 256 ) return( false );
+	encode[ 0 ] = 0;
+	uint32_t i;
+	for( i = 1; i < length; ++i )
+	{
+		uint32_t l = 0;
+		uint32_t h = i;
+		while( l < h )
+		{
+			unsigned int c = ( ( l + h ) >> 1 );
+			if( Compare( input, length, i, encode[ c ] ) < 0 )
+			{
+				h = c;
+			}
+			else
+			{
+				l = ( c + 1 );
+			}
+		}
+		for( h = i; h > l; --h ) encode[ h ] = encode[ h - 1 ];
+		encode[ l ] = static_cast< uint8_t >( i );
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint8_t e = encode[ i ];
+		if( e )
+		{
+			output[ i ] = input[ e - 1 ];
+		}
+		else
+		{
+			key = static_cast< uint8_t >( i );
+			output[ i ] = input[ length - 1 ];
+		}
+	}
+	return( true );
+}
+
+//! decode buffers up to 256 bytes long (return false if length > 256)
+bool Decode( const uint8_t* const input, uint8_t* const output, uint8_t* const decode, const uint32_t length, uint8_t& key )
+{
+	if( length > 256 ) return( false );
+	uint8_t keys[ 256 ];
+	uint32_t i, j, k;
+	for( k = 0; k < 256; ++k ) keys[ k ] = 0;
+	for( i = 0; i < length; ++i ) ++keys[ input[ i ] ];
+	i = 0;
+	for( k = 0; k < 256; ++k )
+	{
+		j = keys[ k ];
+		keys[ k ] = static_cast< uint8_t >( i );
+		i += j;
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint8_t c = input[ i ];
+		decode[ i ] = keys[ c ];
+		++keys[ c ];
+	}
+	k = key;
+	i = length;
+	while( i )
+	{
+		--i;
+		output[ i ] = input[ k ];
+		k = decode[ k ];
+	}
+	return( true );
+}
+
+//! encode buffers up to 65536 bytes long (return false if length > 65536)
+bool Encode( const uint8_t* const input, uint8_t* const output, uint16_t* const encode, const uint32_t length, uint16_t& key )
+{
+	if( length > 65536 ) return( false );
+	encode[ 0 ] = 0;
+	uint32_t i;
+	for( i = 1; i < length; ++i )
+	{
+		uint32_t l = 0;
+		uint32_t h = i;
+		while( l < h )
+		{
+			unsigned int c = ( ( l + h ) >> 1 );
+			if( Compare( input, length, i, encode[ c ] ) < 0 )
+			{
+				h = c;
+			}
+			else
+			{
+				l = ( c + 1 );
+			}
+		}
+		for( h = i; h > l; --h ) encode[ h ] = encode[ h - 1 ];
+		encode[ l ] = static_cast< uint16_t >( i );
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint16_t e = encode[ i ];
+		if( e )
+		{
+			output[ i ] = input[ e - 1 ];
+		}
+		else
+		{
+			key = static_cast< uint16_t >( i );
+			output[ i ] = input[ length - 1 ];
+		}
+	}
+	return( true );
+}
+
+//! decode buffers up to 65536 bytes long (return false if length > 65536)
+bool Decode( const uint8_t* const input, uint8_t* const output, uint16_t* const decode, const uint32_t length, uint16_t& key )
+{
+	if( length > 65536 ) return( false );
+	uint16_t keys[ 256 ];
+	uint32_t i, j, k;
+	for( k = 0; k < 256; ++k ) keys[ k ] = 0;
+	for( i = 0; i < length; ++i ) ++keys[ input[ i ] ];
+	i = 0;
+	for( k = 0; k < 256; ++k )
+	{
+		j = keys[ k ];
+		keys[ k ] = static_cast< uint16_t >( i );
+		i += j;
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint8_t c = input[ i ];
+		decode[ i ] = keys[ c ];
+		++keys[ c ];
+	}
+	k = key;
+	i = length;
+	while( i )
+	{
+		--i;
+		output[ i ] = input[ k ];
+		k = decode[ k ];
+	}
+	return( true );
+}
+
+//! encode buffers greater than 65536 bytes long
+void Encode( const uint8_t* const input, uint8_t* const output, uint32_t* const encode, const uint32_t length, uint32_t& key )
+{
+	encode[ 0 ] = 0;
+	uint32_t i;
+	for( i = 1; i < length; ++i )
+	{
+		uint32_t l = 0;
+		uint32_t h = i;
+		while( l < h )
+		{
+			unsigned int c = ( ( l + h ) >> 1 );
+			if( Compare( input, length, i, encode[ c ] ) < 0 )
+			{
+				h = c;
+			}
+			else
+			{
+				l = ( c + 1 );
+			}
+		}
+		for( h = i; h > l; --h ) encode[ h ] = encode[ h - 1 ];
+		encode[ l ] = i;
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint32_t e = encode[ i ];
+		if( e )
+		{
+			output[ i ] = input[ e - 1 ];
+		}
+		else
+		{
+			key = i;
+			output[ i ] = input[ length - 1 ];
+		}
+	}
+}
+
+//! decode buffers greater than 65536 bytes long
+void Decode( const uint8_t* const input, uint8_t* const output, uint32_t* const decode, const uint32_t length, uint32_t& key )
+{
+	uint32_t keys[ 256 ];
+	uint32_t i, j, k;
+	for( k = 0; k < 256; ++k ) keys[ k ] = 0;
+	for( i = 0; i < length; ++i ) ++keys[ input[ i ] ];
+	i = 0;
+	for( k = 0; k < 256; ++k )
+	{
+		j = keys[ k ];
+		keys[ k ] = i;
+		i += j;
+	}
+	for( i = 0; i < length; ++i )
+	{
+		uint8_t c = input[ i ];
+		decode[ i ] = keys[ c ];
+		++keys[ c ];
+	}
+	k = key;
+	i = length;
+	while( i )
+	{
+		--i;
+		output[ i ] = input[ k ];
+		k = decode[ k ];
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end bwt namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace bwt
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end compression namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace compression
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

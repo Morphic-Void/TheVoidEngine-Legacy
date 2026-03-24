@@ -1,0 +1,299 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    File:   plane.cpp
+////    Author: Ritchie Brannan
+////    Date:   11 Nov 10
+////
+////    Description:
+////
+////    	Plane container and functions.
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    includes
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "plane.h"
+#include "dquat.h"
+#include "joint.h"
+#include "mat33.h"
+#include "mat43.h"
+#include "consts.h"
+#include "libs/system/base/types.h"
+#include "libs/system/debug/asserts.h"
+#include <math.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    begin maths namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace maths
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    consts
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace consts
+{
+	namespace PLANE
+	{
+		const plane		POS_X = {  1,  0,  0,  0 };
+		const plane		POS_Y = {  0,  1,  0,  0 };
+		const plane		POS_Z = {  0,  0,  1,  0 };
+		const plane		NEG_X = { -1,  0,  0,  0 };
+		const plane		NEG_Y = {  0, -1,  0,  0 };
+		const plane		NEG_Z = {  0,  0, -1,  0 };
+	};
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    plane
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+bool plane::IsNan( void ) const
+{
+	return( ::IsNan( x ) || ::IsNan( y ) || ::IsNan( z ) || ::IsNan( w ) );
+}
+
+bool plane::IsReal( void ) const
+{
+	return( ::IsReal( x ) && ::IsReal( y ) && ::IsReal( z ) && ::IsReal( w ) );
+}
+
+void plane::Mul( const quat& mul )
+{
+	SetMul( *this, mul );
+}
+
+void plane::Mul( const dquat& mul )
+{
+	SetMul( *this, mul );
+}
+
+void plane::Mul( const joint& mul )
+{
+	SetMul( *this, mul );
+}
+
+void plane::Mul( const mat33& mul )
+{
+	SetMul( *this, mul );
+}
+
+void plane::Mul( const mat43& mul )
+{
+	SetMul( *this, mul );
+}
+
+void plane::Negate( void )
+{
+	x = -x;
+	y = -y;
+	z = -z;
+	w = -w;
+}
+
+void plane::Normalize( void )
+{
+	float n = ( 1.0f / ( sqrtf( ( x * x ) + ( y * y ) + ( z * z ) ) + consts::FLOAT_MIN_NORM ) );
+	x *= n;
+	y *= n;
+	z *= n;
+	w *= n;
+}
+
+void plane::SetMul( const plane& src, const quat& mul )
+{
+	float n = ( src.w / ( src.t_vec3().SqrLen() + consts::FLOAT_MIN_NORM ) );
+	mul.Transform( src.t_vec3(), t_vec3() );
+	w = ( ( x * x * n ) + ( y * y * n ) + ( z * z * n ) );
+}
+
+void plane::SetMul( const plane& src, const dquat& mul )
+{
+	vec3 v;
+	mul.GetTranslation( v );
+	float n = ( src.w / ( src.t_vec3().SqrLen() + consts::FLOAT_MIN_NORM ) );
+	mul.r.Transform( src.t_vec3(), t_vec3() );
+	w = ( ( x * ( ( x * n ) - v.x ) ) + ( y * ( ( y * n ) - v.y ) ) + ( z * ( ( z * n ) - v.z ) ) );
+}
+
+void plane::SetMul( const plane& src, const joint& mul )
+{
+	float n = ( src.w / ( src.t_vec3().SqrLen() + consts::FLOAT_MIN_NORM ) );
+	mul.q.Transform( src.t_vec3(), t_vec3() );
+	w = ( ( x * ( ( x * n ) - mul.v.x ) ) + ( y * ( ( y * n ) - mul.v.y ) ) + ( z * ( ( z * n ) - mul.v.z ) ) );
+}
+
+void plane::SetMul( const plane& src, const mat33& mul )
+{
+	vec3 v;
+	v.x = src.t_vec3().Triple( mul.y, mul.z );
+	v.y = src.t_vec3().Triple( mul.z, mul.x );
+	v.z = src.t_vec3().Triple( mul.x, mul.y );
+	float n = ( 1.0f / ( sqrtf( v.SqrLen() ) + consts::FLOAT_MIN_NORM ) );
+	v.x *= n;
+	v.y *= n;
+	v.z *= n;
+	w = ( ( src.w * (
+		( src.t_vec3().Dot( mul.x ) * v.x ) +
+		( src.t_vec3().Dot( mul.y ) * v.y ) +
+		( src.t_vec3().Dot( mul.z ) * v.z ) ) ) /
+		src.t_vec3().SqrLen() );
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
+
+void plane::SetMul( const plane& src, const mat43& mul )
+{
+	vec3 v;
+	v.x = src.t_vec3().Triple( mul.y.t_vec3(), mul.z.t_vec3() );
+	v.y = src.t_vec3().Triple( mul.z.t_vec3(), mul.x.t_vec3() );
+	v.z = src.t_vec3().Triple( mul.x.t_vec3(), mul.y.t_vec3() );
+	float n = ( 1.0f / ( sqrtf( v.SqrLen() ) + consts::FLOAT_MIN_NORM ) );
+	v.x *= n;
+	v.y *= n;
+	v.z *= n;
+	w = ( ( ( src.w * (
+		( src.t_vec3().Dot( mul.x.t_vec3() ) * v.x ) +
+		( src.t_vec3().Dot( mul.y.t_vec3() ) * v.y ) +
+		( src.t_vec3().Dot( mul.z.t_vec3() ) * v.z ) ) ) /
+		src.t_vec3().SqrLen() ) -
+		( ( mul.x.w * v.x ) + ( mul.y.w * v.y ) + ( mul.z.w * v.z ) ) );
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
+
+void plane::SetNegate( const plane& src )
+{
+	x = -src.x;
+	y = -src.y;
+	z = -src.z;
+	w = -src.w;
+}
+
+void plane::SetNormalized( const plane& src )
+{
+	Set( src );
+	Normalize();
+}
+
+void plane::Set( const vec3& va, const vec3& vb, const vec3& vc )
+{
+	vec3 u, v, n;
+	u.SetSub( vb, va );
+	v.SetSub( vc, va );
+	n.SetCross( u, v );
+	Set( va, n );
+}
+
+void plane::Set( const float px, const float py, const float pz, const float pw )
+{
+	x = px;
+	y = py;
+	z = pz;
+	w = pw;
+}
+
+void plane::Set( const plane& p )
+{
+	x = p.x;
+	y = p.y;
+	z = p.z;
+	w = p.w;
+}
+
+void plane::Set( const vec3& pos, const vec3& dir )
+{
+	x = dir.x;
+	y = dir.y;
+	z = dir.z;
+	w = -( ( pos.x * x ) + ( pos.y * y ) + ( pos.z * z ) );
+}
+
+void plane::Get( float& px, float& py, float& pz, float& pw ) const
+{
+	px = x;
+	py = y;
+	pz = z;
+	pw = w;
+}
+
+void plane::Get( plane& p ) const
+{
+	p.x = x;
+	p.y = y;
+	p.z = z;
+	p.w = w;
+}
+
+void plane::Get( vec3& pos, vec3& dir ) const
+{
+	float n = ( -1.0f / ( t_vec3().SqrLen() + consts::FLOAT_MIN_NORM ) );
+	pos.x = ( x * n );
+	pos.y = ( y * n );
+	pos.z = ( z * n );
+	dir.x = x;
+	dir.y = y;
+	dir.z = z;
+}
+
+void IntersectPlanes( const plane& a, const plane& b, const plane& c, vec3& intersection )
+{
+	vec3 x, y, z;
+	x.SetCross( b.t_vec3(), c.t_vec3() );
+	y.SetCross( c.t_vec3(), a.t_vec3() );
+	z.SetCross( a.t_vec3(), b.t_vec3() );
+	float d = -x.Dot( a.t_vec3() );
+	if( fabsf( d ) < consts::FLOAT_MIN_RCP )
+	{
+		intersection.x = intersection.y = intersection.z = 0;
+	}
+	else
+	{
+		intersection.x = ( ( ( a.w * x.x ) + ( b.w * y.x ) + ( c.w * z.x ) ) / d );
+		intersection.y = ( ( ( a.w * x.y ) + ( b.w * y.y ) + ( c.w * z.y ) ) / d );
+		intersection.z = ( ( ( a.w * x.z ) + ( b.w * y.z ) + ( c.w * z.z ) ) / d );
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end maths namespace
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+};	//	namespace maths
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+////    end of file
+////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
