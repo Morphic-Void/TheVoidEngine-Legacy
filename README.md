@@ -75,7 +75,7 @@ This description is intentionally high-level. The internal workings are complex 
 
 ## Intended Use
 
-This repository is provided for:
+This repository is provided as a resource for:
 
 - developers interested in historical engine design
 - researchers exploring custom rendering pipelines
@@ -103,8 +103,13 @@ This legacy repository exists to document where the technology began.
 
 ## License
 
-This project is released under the same permissive MIT license used by SuiteUTF.
-See the LICENSE file for details.
+Licensed under the MIT License. See the LICENSE file for details.
+
+Copyright (c) 2010-2016 Ritchie Brannan.
+
+Attribution is appreciated where practical.
+
+This project is provided as-is and is not maintained.
 
 ---------------------------------------------------------------------
 
