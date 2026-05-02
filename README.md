@@ -1,8 +1,17 @@
 # Void Engine (Legacy) - Proof-of-Concept Archive
 
-This repository contains the legacy engine and proof-of-concept demo developed between 2010 and 2016. It represents an early exploration of engine architecture, tooling, rendering systems, and asset pipelines that later informed the design of the modern Void Engine.
+This repository contains the legacy engine and proof-of-concept demo developed
+between 2010 and 2016. It represents an early exploration of engine
+architecture, tooling, rendering systems, asset pipelines, and game-specific
+spatial ideas that later informed the design of The Manifold Engine.
 
-The codebase is preserved exactly as it existed during development, including its original directory layout, build scripts, and tooling. This ensures the project remains buildable and historically accurate.
+This repository should be read as historical exploratory code and design
+evidence. It is not the active production engine, not the current codebase, and
+not a representation of the engineering standards, documentation style, or
+architectural discipline used by the active project.
+
+The source tree, directory layout, build scripts, and tooling are preserved in
+their original form so the project remains buildable and historically accurate.
 
 ---------------------------------------------------------------------
 
@@ -11,11 +20,36 @@ The codebase is preserved exactly as it existed during development, including it
 This project is published as:
 
 - a historical artefact
+- a record of early validation work
 - a reference for developers interested in engine architecture
-- a snapshot of early ideas that evolved into the modern Void Engine
+- a snapshot of early ideas that evolved into The Manifold Engine
 - a working demonstration of a complete custom engine ecosystem from the period
 
+The repository records an earlier working prototype that helped identify the
+shape of the game, the engine, the editor, and the supporting tooling now being
+rebuilt more deliberately in the active codebase.
+
 It is not intended as a maintained or production-ready engine.
+
+---------------------------------------------------------------------
+
+## What This Repository Is Not
+
+This repository is not:
+
+- the active production engine
+- the current codebase
+- a maintained general-purpose game engine
+- a competitor to Unreal, Unity, Godot, or similar engines
+- representative of the final code quality, API design, documentation, or
+  implementation discipline
+- intended as a general-purpose framework for other projects
+
+The code is exploratory and provisional. Some of it is old enough to reflect
+earlier constraints, earlier tooling, and earlier engineering preferences.
+
+Its value is that it records working design evidence from an earlier exploratory
+phase of the project.
 
 ---------------------------------------------------------------------
 
@@ -29,26 +63,31 @@ The build system relies on:
 - tools and scripts with hard-coded assumptions
 - a self-contained shader compiler DLL from the development period
 
-Because of these constraints, any attempt to reorganise the directory structure would break the build pipeline. To maintain authenticity and functionality, the layout is kept exactly as it was.
+Because of these constraints, reorganising the directory structure would break
+the build pipeline. To maintain authenticity and functionality, the layout is
+kept in its original form.
 
 ---------------------------------------------------------------------
 
 ## Build Status
 
-Despite its age, the engine and tools still build successfully on modern MSVC. This is possible because:
+Despite its age, the engine and tools still build successfully on modern MSVC.
+This is possible because:
 
 - the repository includes the original shader compiler DLL
 - the shader pipeline is self-contained
 - the batch-file build system remains intact
 - the solution and project files can be auto-updated by MSVC
 
-Users familiar with Visual Studio should be able to build the solution without modification.
+Users familiar with Visual Studio should be able to build the solution without
+modification.
 
 ---------------------------------------------------------------------
 
 ## High-Level Overview of the System
 
-This engine was developed as a proof of concept, but includes a substantial amount of infrastructure for a solo project. Major components include:
+This engine was developed as a proof of concept, but includes a substantial
+amount of infrastructure for a solo project. Major components include:
 
 - Custom shader pipeline
   - HLSL compiled to .cso
@@ -69,7 +108,8 @@ This engine was developed as a proof of concept, but includes a substantial amou
 - Proof-of-concept demo
   - demonstrates rendering, systems, and engine behaviour
 
-This description is intentionally high-level. The internal workings are complex and reflect the development practices and constraints of the time.
+This description is intentionally high-level. The internal workings are complex
+and reflect the development practices and constraints of the time.
 
 ---------------------------------------------------------------------
 
@@ -79,23 +119,30 @@ This repository is provided as a resource for:
 
 - developers interested in historical engine design
 - researchers exploring custom rendering pipelines
-- anyone curious about the evolution of the modern Void Engine
+- anyone curious about the origins of The Manifold Engine
 - those who may find specific subsystems useful as reference material
 
 It is not maintained, supported, or recommended for production use.
 
 ---------------------------------------------------------------------
 
-## Relationship to the Modern Void Engine
+## Relationship to The Manifold Engine
 
-Active development continues in the modern Void Engine, which is a complete re-architecture and production-ready evolution of the ideas explored here. The modern engine features:
+Active development continues in The Manifold Engine, which is a controlled
+reconstruction of the useful lessons from this prototype under a new
+architecture, stricter engineering rules, and a cleaner project structure.
 
-- updated coding style
-- redesigned systems
-- new architecture
-- modernised tooling
-- SuiteUTF integration
-- a clean, intentional directory layout
+The active engine/editor codebase is here:
+
+- [The Manifold Engine](https://github.com/Morphic-Void/morphic-manifold-engine)
+
+For more context on how this prototype influenced the active engine, see:
+
+- [Origins](https://github.com/Morphic-Void/morphic-manifold-engine/blob/main/docs/origins.md)
+
+The Manifold Engine is intentionally narrower than a general-purpose public
+engine. It exists to support a specific game, its spatial model, and the
+surrounding tooling needed to build it.
 
 This legacy repository exists to document where the technology began.
 
@@ -115,4 +162,9 @@ This project is provided as-is and is not maintained.
 
 ## Final Notes
 
-This repository is a preserved snapshot of a working engine ecosystem from a specific period. It is intentionally unmodified to maintain authenticity and buildability. Users are welcome to explore, study, and experiment with the code, but should expect a system that reflects its era.
+This repository is a preserved snapshot of a working engine ecosystem from a
+specific period. It is intentionally kept in its original structure to maintain
+authenticity and buildability.
+
+Users are welcome to explore, study, and experiment with the code, but should
+expect a system that reflects its era.
